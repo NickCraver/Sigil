@@ -14,9 +14,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Pops two arguments off the stack, adds them, and pushes the result.
-        /// 
-        /// Throws an OverflowException if the result overflows the destination type.
+        /// <para>Pops two arguments off the stack, adds them, and pushes the result.</para>
+        /// <para>Throws an OverflowException if the result overflows the destination type.</para>
         /// </summary>
         public Emit AddOverflow()
         {
@@ -25,9 +24,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Pops two arguments off the stack, adds them as if they were unsigned, and pushes the result.
-        /// 
-        /// Throws an OverflowException if the result overflows the destination type.
+        /// <para>Pops two arguments off the stack, adds them as if they were unsigned, and pushes the result.</para>
+        /// <para>Throws an OverflowException if the result overflows the destination type.</para>
         /// </summary>
         public Emit UnsignedAddOverflow()
         {
@@ -63,9 +61,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Pops two arguments off the stack, multiplies them, and pushes the result.
-        /// 
-        /// Throws an OverflowException if the result overflows the destination type.
+        /// <para>Pops two arguments off the stack, multiplies them, and pushes the result.</para>
+        /// <para>Throws an OverflowException if the result overflows the destination type.</para>
         /// </summary>
         public Emit MultiplyOverflow()
         {
@@ -74,9 +71,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Pops two arguments off the stack, multiplies them as if they were unsigned, and pushes the result.
-        /// 
-        /// Throws an OverflowException if the result overflows the destination type.
+        /// <para>Pops two arguments off the stack, multiplies them as if they were unsigned, and pushes the result.</para>
+        /// <para>Throws an OverflowException if the result overflows the destination type.</para>
         /// </summary>
         public Emit UnsignedMultiplyOverflow()
         {
@@ -112,9 +108,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Pops two arguments off the stack, subtracts the first from the second, and pushes the result.
-        /// 
-        /// Throws an OverflowException if the result overflows the destination type.
+        /// <para>Pops two arguments off the stack, subtracts the first from the second, and pushes the result.</para>
+        /// <para>Throws an OverflowException if the result overflows the destination type.</para>
         /// </summary>
         public Emit SubtractOverflow()
         {
@@ -123,9 +118,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Pops two arguments off the stack, subtracts the first from the second as if they were unsigned, and pushes the result.
-        /// 
-        /// Throws an OverflowException if the result overflows the destination type.
+        /// <para>Pops two arguments off the stack, subtracts the first from the second as if they were unsigned, and pushes the result.</para>
+        /// <para>Throws an OverflowException if the result overflows the destination type.</para>
         /// </summary>
         public Emit UnsignedSubtractOverflow()
         {

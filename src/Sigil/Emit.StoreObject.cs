@@ -7,9 +7,8 @@ namespace Sigil
     public partial class Emit<DelegateType>
     {
         /// <summary>
-        /// Pops a value type and a pointer off of the stack and copies the given value to the given address.
-        /// 
-        /// For primitive and reference types use StoreIndirect.
+        /// <para>Pops a value type and a pointer off of the stack and copies the given value to the given address.</para>
+        /// <para>For primitive and reference types use StoreIndirect.</para>
         /// </summary>
         public Emit<DelegateType> StoreObject<ValueType>(bool isVolatile = false, int? unaligned = null)
             where ValueType : struct
@@ -18,9 +17,8 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Pops a value type and a pointer off of the stack and copies the given value to the given address.
-        /// 
-        /// For primitive and reference types use StoreIndirect.
+        /// <para>Pops a value type and a pointer off of the stack and copies the given value to the given address.</para>
+        /// <para>For primitive and reference types use StoreIndirect.</para>
         /// </summary>
         public Emit<DelegateType> StoreObject(Type valueType, bool isVolatile = false, int? unaligned = null)
         {

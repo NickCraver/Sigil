@@ -94,9 +94,8 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Pops two arguments off the stack, shifts the second value right by the first value.
-        /// 
-        /// Sign extends from the left.
+        /// <para>Pops two arguments off the stack, shifts the second value right by the first value.</para>
+        /// <para>Sign extends from the left.</para>
         /// </summary>
         public Emit<DelegateType> ShiftRight()
         {
@@ -106,9 +105,8 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Pops two arguments off the stack, shifts the second value right by the first value.
-        /// 
-        /// Acts as if the value were unsigned, zeros always coming in from the left.
+        /// <para>Pops two arguments off the stack, shifts the second value right by the first value.</para>
+        /// <para>Acts as if the value were unsigned, zeros always coming in from the left.</para>
         /// </summary>
         public Emit<DelegateType> UnsignedShiftRight()
         {

@@ -7,10 +7,11 @@ namespace Sigil
     public partial class Emit<DelegateType>
     {
         /// <summary>
-        /// Emits IL that calls Console.WriteLine(string) for the given string if no locals are passed.
-        /// 
+        /// <para>Emits IL that calls Console.WriteLine(string) for the given string if no locals are passed.</para>
+        /// <para>
         /// If any locals are passed, line is treated as a format string and local values are used in a call
         /// to Console.WriteLine(string, object[]).
+        /// </para>
         /// </summary>
         public Emit<DelegateType> WriteLine(string line, params Local[] locals)
         {

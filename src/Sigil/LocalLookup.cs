@@ -9,9 +9,8 @@ namespace Sigil
     public class LocalLookup
     {
         /// <summary>
-        /// Returns the local with the given name.
-        /// 
-        /// Throws KeyNotFoundException if no local by that name is found".
+        /// <para>Returns the local with the given name.</para>
+        /// <para>Throws KeyNotFoundException if no local by that name is found".</para>
         /// </summary>
         public Local this[string name]
         {

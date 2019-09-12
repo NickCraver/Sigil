@@ -5,9 +5,8 @@ namespace Sigil.NonGeneric
     public partial class Emit
     {
         /// <summary>
-        /// Loads a field onto the stack.
-        /// 
-        /// Instance fields expect a reference on the stack, which is popped.
+        /// <para>Loads a field onto the stack.</para>
+        /// <para>Instance fields expect a reference on the stack, which is popped.</para>
         /// </summary>
         public Emit LoadField(FieldInfo field, bool? isVolatile = null, int? unaligned = null)
         {

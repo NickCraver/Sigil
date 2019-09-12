@@ -8,9 +8,8 @@ namespace Sigil
     public partial class Emit<DelegateType>
     {
         /// <summary>
-        /// Push a 1 onto the stack if b is true, and 0 if false.
-        /// 
-        /// Pushed values are int32s.
+        /// <para>Push a 1 onto the stack if b is true, and 0 if false.</para>
+        /// <para>Pushed values are int32s.</para>
         /// </summary>
         public Emit<DelegateType> LoadConstant(bool b)
         {

@@ -22,9 +22,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Ends the given exception block.
-        /// 
-        /// All catch and finally blocks associated with the given exception block must be ended before this method is called.
+        /// <para>Ends the given exception block.</para>
+        /// <para>All catch and finally blocks associated with the given exception block must be ended before this method is called.</para>
         /// </summary>
         public Emit EndExceptionBlock(ExceptionBlock forTry)
         {
@@ -33,9 +32,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Begins a catch block for the given exception type in the given exception block.
-        /// 
-        /// The given exception block must still be open.
+        /// <para>Begins a catch block for the given exception type in the given exception block.</para>
+        /// <para>The given exception block must still be open.</para>
         /// </summary>
         public CatchBlock BeginCatchBlock<ExceptionType>(ExceptionBlock forTry)
         {
@@ -43,9 +41,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Begins a catch block for the given exception type in the given exception block.
-        /// 
-        /// The given exception block must still be open.
+        /// <para>Begins a catch block for the given exception type in the given exception block.</para>
+        /// <para>The given exception block must still be open.</para>
         /// </summary>
         public Emit BeginCatchBlock<ExceptionType>(ExceptionBlock forTry, out CatchBlock forCatch)
         {
@@ -54,11 +51,9 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Begins a catch block for all exceptions in the given exception block
-        ///
-        /// The given exception block must still be open.
-        /// 
-        /// Equivalent to BeginCatchBlock(typeof(Exception), forTry).
+        /// <para>Begins a catch block for all exceptions in the given exception block</para>
+        /// <para>The given exception block must still be open.</para>
+        /// <para>Equivalent to BeginCatchBlock(typeof(Exception), forTry).</para>
         /// </summary>
         public CatchBlock BeginCatchAllBlock(ExceptionBlock forTry)
         {
@@ -66,11 +61,9 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Begins a catch block for all exceptions in the given exception block
-        ///
-        /// The given exception block must still be open.
-        /// 
-        /// Equivalent to BeginCatchBlock(typeof(Exception), forTry).
+        /// <para>Begins a catch block for all exceptions in the given exception block</para>
+        /// <para>The given exception block must still be open.</para>
+        /// <para>Equivalent to BeginCatchBlock(typeof(Exception), forTry).</para>
         /// </summary>
         public Emit BeginCatchAllBlock(ExceptionBlock forTry, out CatchBlock forCatch)
         {
@@ -79,9 +72,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Begins a catch block for the given exception type in the given exception block.
-        /// 
-        /// The given exception block must still be open.
+        /// <para>Begins a catch block for the given exception type in the given exception block.</para>
+        /// <para>The given exception block must still be open.</para>
         /// </summary>
         public CatchBlock BeginCatchBlock(ExceptionBlock forTry, Type exceptionType)
         {
@@ -89,9 +81,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Begins a catch block for the given exception type in the given exception block.
-        /// 
-        /// The given exception block must still be open.
+        /// <para>Begins a catch block for the given exception type in the given exception block.</para>
+        /// <para>The given exception block must still be open.</para>
         /// </summary>
         public Emit BeginCatchBlock(ExceptionBlock forTry, Type exceptionType, out CatchBlock forCatch)
         {
@@ -109,11 +100,9 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Begins a finally block on the given exception block.
-        /// 
-        /// Only one finally block can be defined per exception block, and the block cannot appear within a catch block.
-        /// 
-        /// The given exception block must still be open.
+        /// <para>Begins a finally block on the given exception block.</para>
+        /// <para>Only one finally block can be defined per exception block, and the block cannot appear within a catch block.</para>
+        /// <para>The given exception block must still be open.</para>
         /// </summary>
         public Emit BeginFinallyBlock(ExceptionBlock forTry, out FinallyBlock forFinally)
         {
@@ -122,11 +111,9 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Begins a finally block on the given exception block.
-        /// 
-        /// Only one finally block can be defined per exception block, and the block cannot appear within a catch block.
-        /// 
-        /// The given exception block must still be open.
+        /// <para>Begins a finally block on the given exception block.</para>
+        /// <para>Only one finally block can be defined per exception block, and the block cannot appear within a catch block.</para>
+        /// <para>The given exception block must still be open.</para>
         /// </summary>
         public FinallyBlock BeginFinallyBlock(ExceptionBlock forTry)
         {

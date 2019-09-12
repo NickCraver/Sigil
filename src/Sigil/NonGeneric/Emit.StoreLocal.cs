@@ -4,9 +4,8 @@ namespace Sigil.NonGeneric
     public partial class Emit
     {
         /// <summary>
-        /// Pops a value off the stack and stores it into the given local.
-        /// 
-        /// To create a local, use DeclareLocal().
+        /// <para>Pops a value off the stack and stores it into the given local.</para>
+        /// <para>To create a local, use DeclareLocal().</para>
         /// </summary>
         public Emit StoreLocal(Local local)
         {

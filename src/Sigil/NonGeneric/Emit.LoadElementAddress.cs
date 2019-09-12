@@ -5,9 +5,8 @@ namespace Sigil.NonGeneric
     public partial class Emit
     {
         /// <summary>
-        /// Expects a reference to an array of the given element type and an index on the stack.
-        /// 
-        /// Pops both, and pushes the address of the element at the given index.
+        /// <para>Expects a reference to an array of the given element type and an index on the stack.</para>
+        /// <para>Pops both, and pushes the address of the element at the given index.</para>
         /// </summary>
         public Emit LoadElementAddress<ElementType>()
         {
@@ -16,9 +15,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Expects a reference to an array of the given element type and an index on the stack.
-        /// 
-        /// Pops both, and pushes the address of the element at the given index.
+        /// <para>Expects a reference to an array of the given element type and an index on the stack.</para>
+        /// <para>Pops both, and pushes the address of the element at the given index.</para>
         /// </summary>
         public Emit LoadElementAddress(Type elementType)
         {

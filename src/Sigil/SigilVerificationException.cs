@@ -1,28 +1,18 @@
 ﻿using Sigil.Impl;
 using System;
-#if !COREFX
 using System.Runtime.Serialization;
-#endif
 using System.Text;
 
 namespace Sigil
 {
     /// <summary>
-    /// A SigilVerificationException is thrown whenever a CIL stream becomes invalid.
-    /// 
-    /// There are many possible causes of this including: operator type mismatches, underflowing the stack, and branching from one stack state to another.
-    /// 
-    /// Invalid arguments, non-sensical parameters, and other non-correctness related errors will throw more specific exceptions.
-    /// 
-    /// SigilVerificationException will typically include the state of the stack (or stacks) at the instruction in error.
+    /// <para>A SigilVerificationException is thrown whenever a CIL stream becomes invalid.</para>
+    /// <para>There are many possible causes of this including: operator type mismatches, underflowing the stack, and branching from one stack state to another.</para>
+    /// <para>Invalid arguments, non-sensical parameters, and other non-correctness related errors will throw more specific exceptions.</para>
+    /// <para>SigilVerificationException will typically include the state of the stack (or stacks) at the instruction in error.</para>
     /// </summary>
-#if !COREFX
     [Serializable]
-#endif
-    public class SigilVerificationException : Exception
-#if !COREFX
-        , ISerializable
-#endif
+    public class SigilVerificationException : Exception, ISerializable
     {
         private string[] Instructions;
         private VerificationResult VerificationFailure;
@@ -116,9 +106,8 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Returns a string representation of any stacks attached to this exception.
-        /// 
-        /// This is meant for debugging purposes, and should not be called during normal operation.
+        /// <para>Returns a string representation of any stacks attached to this exception.</para>
+        /// <para>This is meant for debugging purposes, and should not be called during normal operation.</para>
         /// </summary>
         public string GetDebugInfo()
         {
@@ -215,30 +204,24 @@ namespace Sigil
             }
         }
 
-#if !COREFX
         /// <summary>
         /// Implementation for ISerializable.
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             if (info == null)
             {
-                throw new System.ArgumentNullException("info");
+                throw new ArgumentNullException("info");
             }
 
             base.GetObjectData(info, context);
         }
-#endif
 
         /// <summary>
         /// Returns the message and stacks on this exception, in string form.
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public override string ToString()
         {
             return

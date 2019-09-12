@@ -219,7 +219,7 @@ namespace Sigil.Impl
         }
 
         private LinqDictionary(Dictionary<K, V> d) { Inner = d; }
-        
+
         public LinqDictionary() : this(new Dictionary<K, V>()) { }
         public LinqDictionary(LinqDictionary<K, V> dict)
         {
@@ -427,7 +427,6 @@ namespace Sigil.Impl
 
     internal class LinqHashSet<T> : LinqRoot<T>
     {
-#if !COREFX
         private class Comparer : System.Collections.IEqualityComparer
         {
             private IEqualityComparer<T> Inner;
@@ -446,21 +445,7 @@ namespace Sigil.Impl
                 return Inner.GetHashCode((T)obj);
             }
         }
-#endif
 
-
-
-
-#if COREFX
-        private System.Collections.Generic.HashSet<T> Inner;
-        private LinqHashSet(System.Collections.Generic.HashSet<T> h)
-        {
-            Inner = h;
-        }
-        public LinqHashSet() : this(new System.Collections.Generic.HashSet<T>()) { }
-        public LinqHashSet(IEqualityComparer<T> c) : this(new System.Collections.Generic.HashSet<T>(c)) { }
-        public LinqHashSet(IEnumerable<T> e) : this(new HashSet<T>(e))  { }
-#else
         private System.Collections.Hashtable Inner;
         private LinqHashSet(System.Collections.Hashtable h)
         {
@@ -475,26 +460,9 @@ namespace Sigil.Impl
                 Inner.Add(x, "");
             }
         }
-#endif
+
         public new int Count { get { return Inner.Count; } }
 
-#if COREFX
-        protected override IEnumerable<T> InnerEnumerable()
-        {
-            foreach (var x in Inner)
-            {
-                yield return x;
-            }
-        }
-        public void Add(T item)
-        {
-            Inner.Add(item);
-        }
-        public bool Remove(T item)
-        {
-            return Inner.Remove(item);
-        }
-#else
         protected override IEnumerable<T> InnerEnumerable()
         {
             foreach (var x in Inner.Keys)
@@ -514,7 +482,6 @@ namespace Sigil.Impl
 
             return true;
         }
-#endif
 
         public new bool Contains(T item)
         {

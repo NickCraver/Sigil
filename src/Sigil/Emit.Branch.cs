@@ -568,9 +568,8 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Pops one argument from the stack, branches to the given label if the value is false.
-        /// 
-        /// A value is false if it is zero or null.
+        /// <para>Pops one argument from the stack, branches to the given label if the value is false.</para>
+        /// <para>A value is false if it is zero or null.</para>
         /// </summary>
         public Emit<DelegateType> BranchIfFalse(Label label)
         {
@@ -614,9 +613,8 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Pops one argument from the stack, branches to the label with the given name if the value is false.
-        /// 
-        /// A value is false if it is zero or null.
+        /// <para>Pops one argument from the stack, branches to the label with the given name if the value is false.</para>
+        /// <para>A value is false if it is zero or null.</para>
         /// </summary>
         public Emit<DelegateType> BranchIfFalse(string name)
         {
@@ -626,9 +624,8 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Pops one argument from the stack, branches to the given label if the value is true.
-        /// 
-        /// A value is true if it is non-zero or non-null.
+        /// <para>Pops one argument from the stack, branches to the given label if the value is true.</para>
+        /// <para>A value is true if it is non-zero or non-null.</para>
         /// </summary>
         public Emit<DelegateType> BranchIfTrue(Label label)
         {
@@ -672,9 +669,8 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Pops one argument from the stack, branches to the label with the given name if the value is true.
-        /// 
-        /// A value is true if it is non-zero or non-null.
+        /// <para>Pops one argument from the stack, branches to the label with the given name if the value is true.</para>
+        /// <para>A value is true if it is non-zero or non-null.</para>
         /// </summary>
         public Emit<DelegateType> BranchIfTrue(string name)
         {

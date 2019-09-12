@@ -9,14 +9,13 @@ namespace Sigil
     public partial class Emit<DelegateType>
     {
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes a void return and no parameters.
+        /// </para>
+        /// <para>This helper assumes a void return and no parameters.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit<DelegateType> CallIndirect(CallingConventions callConventions)
         {
             return CallIndirect(callConventions, typeof(void), TypeHelpers.EmptyTypes);
@@ -25,238 +24,221 @@ namespace Sigil
         #region Generic CallIndirect Finder Helpers
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and no parameters.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and no parameters.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit<DelegateType> CallIndirect<ReturnType>(CallingConventions callConventions)
         {
             return CallIndirect(callConventions, typeof(ReturnType));
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit<DelegateType> CallIndirect<ReturnType, ParameterType1>(CallingConventions callConventions)
         {
             return CallIndirect(callConventions, typeof(ReturnType), typeof(ParameterType1));
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit<DelegateType> CallIndirect<ReturnType, ParameterType1, ParameterType2>(CallingConventions callConventions)
         {
             return CallIndirect(callConventions, typeof(ReturnType), typeof(ParameterType1), typeof(ParameterType2));
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit<DelegateType> CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3>(CallingConventions callConventions)
         {
             return CallIndirect(callConventions, typeof(ReturnType), typeof(ParameterType1), typeof(ParameterType2), typeof(ParameterType3));
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit<DelegateType> CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4>(CallingConventions callConventions)
         {
             return CallIndirect(callConventions, typeof(ReturnType), typeof(ParameterType1), typeof(ParameterType2), typeof(ParameterType3), typeof(ParameterType4));
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit<DelegateType> CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5>(CallingConventions callConventions)
         {
             return CallIndirect(callConventions, typeof(ReturnType), typeof(ParameterType1), typeof(ParameterType2), typeof(ParameterType3), typeof(ParameterType4), typeof(ParameterType5));
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit<DelegateType> CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6>(CallingConventions callConventions)
         {
             return CallIndirect(callConventions, typeof(ReturnType), typeof(ParameterType1), typeof(ParameterType2), typeof(ParameterType3), typeof(ParameterType4), typeof(ParameterType5), typeof(ParameterType6));
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit<DelegateType> CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7>(CallingConventions callConventions)
         {
             return CallIndirect(callConventions, typeof(ReturnType), typeof(ParameterType1), typeof(ParameterType2), typeof(ParameterType3), typeof(ParameterType4), typeof(ParameterType5), typeof(ParameterType6), typeof(ParameterType7));
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit<DelegateType> CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8>(CallingConventions callConventions)
         {
             return CallIndirect(callConventions, typeof(ReturnType), typeof(ParameterType1), typeof(ParameterType2), typeof(ParameterType3), typeof(ParameterType4), typeof(ParameterType5), typeof(ParameterType6), typeof(ParameterType7), typeof(ParameterType8));
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit<DelegateType> CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9>(CallingConventions callConventions)
         {
             return CallIndirect(callConventions, typeof(ReturnType), typeof(ParameterType1), typeof(ParameterType2), typeof(ParameterType3), typeof(ParameterType4), typeof(ParameterType5), typeof(ParameterType6), typeof(ParameterType7), typeof(ParameterType8), typeof(ParameterType9));
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit<DelegateType> CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9, ParameterType10>(CallingConventions callConventions)
         {
             return CallIndirect(callConventions, typeof(ReturnType), typeof(ParameterType1), typeof(ParameterType2), typeof(ParameterType3), typeof(ParameterType4), typeof(ParameterType5), typeof(ParameterType6), typeof(ParameterType7), typeof(ParameterType8), typeof(ParameterType9), typeof(ParameterType10));
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit<DelegateType> CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9, ParameterType10, ParameterType11>(CallingConventions callConventions)
         {
             return CallIndirect(callConventions, typeof(ReturnType), typeof(ParameterType1), typeof(ParameterType2), typeof(ParameterType3), typeof(ParameterType4), typeof(ParameterType5), typeof(ParameterType6), typeof(ParameterType7), typeof(ParameterType8), typeof(ParameterType9), typeof(ParameterType10), typeof(ParameterType11));
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit<DelegateType> CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9, ParameterType10, ParameterType11, ParameterType12>(CallingConventions callConventions)
         {
             return CallIndirect(callConventions, typeof(ReturnType), typeof(ParameterType1), typeof(ParameterType2), typeof(ParameterType3), typeof(ParameterType4), typeof(ParameterType5), typeof(ParameterType6), typeof(ParameterType7), typeof(ParameterType8), typeof(ParameterType9), typeof(ParameterType10), typeof(ParameterType11), typeof(ParameterType12));
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit<DelegateType> CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9, ParameterType10, ParameterType11, ParameterType12, ParameterType13>(CallingConventions callConventions)
         {
             return CallIndirect(callConventions, typeof(ReturnType), typeof(ParameterType1), typeof(ParameterType2), typeof(ParameterType3), typeof(ParameterType4), typeof(ParameterType5), typeof(ParameterType6), typeof(ParameterType7), typeof(ParameterType8), typeof(ParameterType9), typeof(ParameterType10), typeof(ParameterType11), typeof(ParameterType12), typeof(ParameterType13));
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit<DelegateType> CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9, ParameterType10, ParameterType11, ParameterType12, ParameterType13, ParameterType14>(CallingConventions callConventions)
         {
             return CallIndirect(callConventions, typeof(ReturnType), typeof(ParameterType1), typeof(ParameterType2), typeof(ParameterType3), typeof(ParameterType4), typeof(ParameterType5), typeof(ParameterType6), typeof(ParameterType7), typeof(ParameterType8), typeof(ParameterType9), typeof(ParameterType10), typeof(ParameterType11), typeof(ParameterType12), typeof(ParameterType13), typeof(ParameterType14));
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit<DelegateType> CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9, ParameterType10, ParameterType11, ParameterType12, ParameterType13, ParameterType14, ParameterType15>(CallingConventions callConventions)
         {
             return CallIndirect(callConventions, typeof(ReturnType), typeof(ParameterType1), typeof(ParameterType2), typeof(ParameterType3), typeof(ParameterType4), typeof(ParameterType5), typeof(ParameterType6), typeof(ParameterType7), typeof(ParameterType8), typeof(ParameterType9), typeof(ParameterType10), typeof(ParameterType11), typeof(ParameterType12), typeof(ParameterType13), typeof(ParameterType14), typeof(ParameterType15));
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit<DelegateType> CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9, ParameterType10, ParameterType11, ParameterType12, ParameterType13, ParameterType14, ParameterType15, ParameterType16>(CallingConventions callConventions)
         {
             return CallIndirect(callConventions, typeof(ReturnType), typeof(ParameterType1), typeof(ParameterType2), typeof(ParameterType3), typeof(ParameterType4), typeof(ParameterType5), typeof(ParameterType6), typeof(ParameterType7), typeof(ParameterType8), typeof(ParameterType9), typeof(ParameterType10), typeof(ParameterType11), typeof(ParameterType12), typeof(ParameterType13), typeof(ParameterType14), typeof(ParameterType15), typeof(ParameterType16));
@@ -265,10 +247,11 @@ namespace Sigil
         #endregion
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This override allows an arglist to be passed for calling VarArgs methods.
+        /// </para>
+        /// <para>This override allows an arglist to be passed for calling VarArgs methods.</para>
         /// </summary>
         public Emit<DelegateType> CallIndirect(CallingConventions callConventions, Type returnType, Type[] parameterTypes, Type[] arglist = null)
         {

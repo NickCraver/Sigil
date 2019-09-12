@@ -9,9 +9,8 @@ namespace Sigil
     public partial class Emit<DelegateType>
     {
         /// <summary>
-        /// Expects a reference to an array and an index on the stack.
-        /// 
-        /// Pops both, and pushes the element in the array at the index onto the stack.
+        /// <para>Expects a reference to an array and an index on the stack.</para>
+        /// <para>Pops both, and pushes the element in the array at the index onto the stack.</para>
         /// </summary>
         public Emit<DelegateType> LoadElement<ElementType>()
         {
@@ -19,9 +18,8 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Expects a reference to an array and an index on the stack.
-        /// 
-        /// Pops both, and pushes the element in the array at the index onto the stack.
+        /// <para>Expects a reference to an array and an index on the stack.</para>
+        /// <para>Pops both, and pushes the element in the array at the index onto the stack.</para>
         /// </summary>
         public Emit<DelegateType> LoadElement(Type elementType)
         {

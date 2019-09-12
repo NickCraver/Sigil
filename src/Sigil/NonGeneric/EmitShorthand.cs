@@ -6,9 +6,8 @@ using System.Reflection.Emit;
 namespace Sigil.NonGeneric
 {
     /// <summary>
-    /// A version of Emit with shorter named versions of it's methods.
-    /// 
-    /// Method names map more or less to OpCodes fields.
+    /// <para>A version of Emit with shorter named versions of it's methods.</para>
+    /// <para>Method names map more or less to OpCodes fields.</para>
     /// </summary>
     public class EmitShorthand
     {
@@ -20,17 +19,17 @@ namespace Sigil.NonGeneric
         public bool AllowsUnverifiableCIL { get { return InnerEmit.AllowsUnverifiableCIL; } }
 
         /// <summary>
-        /// Returns the maxmimum number of items on the stack for the IL stream created with the current emit.
-        /// 
-        /// This is not the maximum that *can be placed*, but the maximum that actually are.
+        /// <para>Returns the maxmimum number of items on the stack for the IL stream created with the current emit.</para>
+        /// <para>This is not the maximum that *can be placed*, but the maximum that actually are.</para>
         /// </summary>
         public int MaxStackSize { get { return InnerEmit.MaxStackSize; } }
 
         /// <summary>
-        /// Lookup for the locals currently in scope by name.
-        /// 
+        /// <para>Lookup for the locals currently in scope by name.</para>
+        /// <para>
         /// Locals go out of scope when released (by calling Dispose() directly, or via using) and go into scope
         /// immediately after a DeclareLocal()
+        /// </para>
         /// </summary>
         public LocalLookup Locals { get { return InnerEmit.Locals; } }
 
@@ -53,9 +52,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Returns a string representation of the CIL opcodes written to this Emit to date.
-        /// 
-        /// This method is meant for debugging purposes only.
+        /// <para>Returns a string representation of the CIL opcodes written to this Emit to date.</para>
+        /// <para>This method is meant for debugging purposes only.</para>
         /// </summary>
         public string Instructions()
         {

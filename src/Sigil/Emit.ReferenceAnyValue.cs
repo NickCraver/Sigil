@@ -1,5 +1,4 @@
-﻿#if !COREFX // see https://github.com/dotnet/corefx/issues/4543 item 4
-using Sigil.Impl;
+﻿using Sigil.Impl;
 using System;
 using System.Reflection.Emit;
 
@@ -8,9 +7,8 @@ namespace Sigil
     public partial class Emit<DelegateType>
     {
         /// <summary>
-        /// Converts a TypedReference on the stack into a reference to the contained object, given the type contained in the TypedReference.
-        /// 
-        /// __makeref(int) on the stack would become an int&amp;, for example.
+        /// <para>Converts a TypedReference on the stack into a reference to the contained object, given the type contained in the TypedReference.</para>
+        /// <para>__makeref(int) on the stack would become an int&amp;, for example.</para>
         /// </summary>
         public Emit<DelegateType> ReferenceAnyValue<Type>()
         {
@@ -18,9 +16,8 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Converts a TypedReference on the stack into a reference to the contained object, given the type contained in the TypedReference.
-        /// 
-        /// __makeref(int) on the stack would become an int&amp;, for example.
+        /// <para>Converts a TypedReference on the stack into a reference to the contained object, given the type contained in the TypedReference.</para>
+        /// <para>__makeref(int) on the stack would become an int&amp;, for example.</para>
         /// </summary>
         public Emit<DelegateType> ReferenceAnyValue(Type type)
         {
@@ -30,7 +27,7 @@ namespace Sigil
             }
 
             var transitions =
-                new[] 
+                new[]
                 {
                     new StackTransition(new[] { typeof(TypedReference) }, new[] { type.MakeByRefType() })
                 };
@@ -41,4 +38,3 @@ namespace Sigil
         }
     }
 }
-#endif

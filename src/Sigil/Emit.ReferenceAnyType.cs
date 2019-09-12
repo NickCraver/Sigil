@@ -1,5 +1,4 @@
-﻿#if !COREFX // see https://github.com/dotnet/corefx/issues/4543 item 4
-using Sigil.Impl;
+﻿using Sigil.Impl;
 using System;
 using System.Reflection.Emit;
 
@@ -8,9 +7,8 @@ namespace Sigil
     public partial class Emit<DelegateType>
     {
         /// <summary>
-        /// Converts a TypedReference on the stack into a RuntimeTypeHandle for the type contained with it.
-        /// 
-        /// __makeref(int) on the stack would become the RuntimeTypeHandle for typeof(int), for example.
+        /// <para>Converts a TypedReference on the stack into a RuntimeTypeHandle for the type contained with it.</para>
+        /// <para>__makeref(int) on the stack would become the RuntimeTypeHandle for typeof(int), for example.</para>
         /// </summary>
         public Emit<DelegateType> ReferenceAnyType()
         {
@@ -25,4 +23,3 @@ namespace Sigil
         }
     }
 }
-#endif

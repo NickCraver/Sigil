@@ -6,14 +6,13 @@ namespace Sigil.NonGeneric
     public partial class Emit
     {
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes a void return and no parameters.
+        /// </para>
+        /// <para>This helper assumes a void return and no parameters.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit CallIndirect(CallingConventions callConventions)
         {
             InnerEmit.CallIndirect(callConventions);
@@ -23,14 +22,13 @@ namespace Sigil.NonGeneric
         #region Generic CallIndirect Finder Helpers
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and no parameters.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and no parameters.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit CallIndirect<ReturnType>(CallingConventions callConventions)
         {
             InnerEmit.CallIndirect<ReturnType>(callConventions);
@@ -38,14 +36,13 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit CallIndirect<ReturnType, ParameterType1>(CallingConventions callConventions)
         {
             InnerEmit.CallIndirect<ReturnType, ParameterType1>(callConventions);
@@ -53,14 +50,13 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit CallIndirect<ReturnType, ParameterType1, ParameterType2>(CallingConventions callConventions)
         {
             InnerEmit.CallIndirect<ReturnType, ParameterType1, ParameterType2>(callConventions);
@@ -68,14 +64,13 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3>(CallingConventions callConventions)
         {
             InnerEmit.CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3>(callConventions);
@@ -83,14 +78,13 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4>(CallingConventions callConventions)
         {
             InnerEmit.CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4>(callConventions);
@@ -98,14 +92,13 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5>(CallingConventions callConventions)
         {
             InnerEmit.CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5>(callConventions);
@@ -113,14 +106,13 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6>(CallingConventions callConventions)
         {
             InnerEmit.CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6>(callConventions);
@@ -128,14 +120,13 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7>(CallingConventions callConventions)
         {
             InnerEmit.CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7>(callConventions);
@@ -143,14 +134,13 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8>(CallingConventions callConventions)
         {
             InnerEmit.CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8>(callConventions);
@@ -158,14 +148,13 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9>(CallingConventions callConventions)
         {
             InnerEmit.CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9>(callConventions);
@@ -173,14 +162,13 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9, ParameterType10>(CallingConventions callConventions)
         {
             InnerEmit.CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9, ParameterType10>(callConventions);
@@ -188,14 +176,13 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9, ParameterType10, ParameterType11>(CallingConventions callConventions)
         {
             InnerEmit.CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9, ParameterType10, ParameterType11>(callConventions);
@@ -203,14 +190,13 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9, ParameterType10, ParameterType11, ParameterType12>(CallingConventions callConventions)
         {
             InnerEmit.CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9, ParameterType10, ParameterType11, ParameterType12>(callConventions);
@@ -218,14 +204,13 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9, ParameterType10, ParameterType11, ParameterType12, ParameterType13>(CallingConventions callConventions)
         {
             InnerEmit.CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9, ParameterType10, ParameterType11, ParameterType12, ParameterType13>(callConventions);
@@ -233,14 +218,13 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9, ParameterType10, ParameterType11, ParameterType12, ParameterType13, ParameterType14>(CallingConventions callConventions)
         {
             InnerEmit.CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9, ParameterType10, ParameterType11, ParameterType12, ParameterType13, ParameterType14>(callConventions);
@@ -248,14 +232,13 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9, ParameterType10, ParameterType11, ParameterType12, ParameterType13, ParameterType14, ParameterType15>(CallingConventions callConventions)
         {
             InnerEmit.CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9, ParameterType10, ParameterType11, ParameterType12, ParameterType13, ParameterType14, ParameterType15>(callConventions);
@@ -263,14 +246,13 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.
+        /// </para>
+        /// <para>This helper assumes ReturnType as a return and parameters of the types given in ParameterType*.</para>
         /// </summary>
-#if NET45
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-#endif
         public Emit CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9, ParameterType10, ParameterType11, ParameterType12, ParameterType13, ParameterType14, ParameterType15, ParameterType16>(CallingConventions callConventions)
         {
             InnerEmit.CallIndirect<ReturnType, ParameterType1, ParameterType2, ParameterType3, ParameterType4, ParameterType5, ParameterType6, ParameterType7, ParameterType8, ParameterType9, ParameterType10, ParameterType11, ParameterType12, ParameterType13, ParameterType14, ParameterType15, ParameterType16>(callConventions);
@@ -280,10 +262,11 @@ namespace Sigil.NonGeneric
         #endregion
 
         /// <summary>
+        /// <para>
         /// Pops a pointer to a method, and then all it's arguments (in reverse order, left-most parameter is deepest on the stack) and calls
         /// invokes the method pointer.  If the method returns a non-void result, it is pushed onto the stack.
-        /// 
-        /// This override allows an arglist to be passed for calling VarArgs methods.
+        /// </para>
+        /// <para>This override allows an arglist to be passed for calling VarArgs methods.</para>
         /// </summary>
         public Emit CallIndirect(CallingConventions callConventions, Type returnType, Type[] parameterTypes, Type[] arglist = null)
         {

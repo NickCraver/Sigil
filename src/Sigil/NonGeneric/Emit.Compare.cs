@@ -4,9 +4,8 @@ namespace Sigil.NonGeneric
     public partial class Emit
     {
         /// <summary>
-        /// Pops two values from the stack, and pushes a 1 if they are equal and 0 if they are not.
-        /// 
-        /// New value on the stack is an Int32.
+        /// <para>Pops two values from the stack, and pushes a 1 if they are equal and 0 if they are not.</para>
+        /// <para>New value on the stack is an Int32.</para>
         /// </summary>
         public Emit CompareEqual()
         {
@@ -15,9 +14,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Pops two arguments from the stack, pushes a 1 if the second value is greater than the first value and a 0 otherwise.
-        /// 
-        /// New value on the stack is an Int32.
+        /// <para>Pops two arguments from the stack, pushes a 1 if the second value is greater than the first value and a 0 otherwise.</para>
+        /// <para>New value on the stack is an Int32.</para>
         /// </summary>
         public Emit CompareGreaterThan()
         {
@@ -26,9 +24,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Pops two arguments from the stack, pushes a 1 if the second value is greater than the first value (as unsigned values) and a 0 otherwise.
-        /// 
-        /// New value on the stack is an Int32.
+        /// <para>Pops two arguments from the stack, pushes a 1 if the second value is greater than the first value (as unsigned values) and a 0 otherwise.</para>
+        /// <para>New value on the stack is an Int32.</para>
         /// </summary>
         public Emit UnsignedCompareGreaterThan()
         {
@@ -37,9 +34,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Pops two arguments from the stack, pushes a 1 if the second value is less than the first value and a 0 otherwise.
-        /// 
-        /// New value on the stack is an Int32.
+        /// <para>Pops two arguments from the stack, pushes a 1 if the second value is less than the first value and a 0 otherwise.</para>
+        /// <para>New value on the stack is an Int32.</para>
         /// </summary>
         public Emit CompareLessThan()
         {
@@ -48,9 +44,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Pops two arguments from the stack, pushes a 1 if the second value is less than the first value (as unsigned values) and a 0 otherwise.
-        /// 
-        /// New value on the stack is an Int32.
+        /// <para>Pops two arguments from the stack, pushes a 1 if the second value is less than the first value (as unsigned values) and a 0 otherwise.</para>
+        /// <para>New value on the stack is an Int32.</para>
         /// </summary>
         public Emit UnsignedCompareLessThan()
         {

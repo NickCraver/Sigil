@@ -4,9 +4,8 @@ using System;
 namespace Sigil
 {
     /// <summary>
-    /// Represents a catch block which appears in an ExceptionBlock.
-    /// 
-    /// To create a CatchBlock, call BeginCatchBlock(Type) or BeginCatchAllBlock().
+    /// <para>Represents a catch block which appears in an ExceptionBlock.</para>
+    /// <para>To create a CatchBlock, call BeginCatchBlock(Type) or BeginCatchAllBlock().</para>
     /// </summary>
     public class CatchBlock : IOwned
     {
@@ -16,17 +15,17 @@ namespace Sigil
         public ExceptionBlock ExceptionBlock { get; private set; }
 
         /// <summary>
-        /// Returns true if this CatchBlock will catch all exceptions.
-        /// 
-        /// This is equivalent to `catch(Exception e)` in C#.
+        /// <para>Returns true if this CatchBlock will catch all exceptions.</para>
+        /// <para>This is equivalent to `catch(Exception e)` in C#.</para>
         /// </summary>
         public bool IsCatchAll { get { return ExceptionType == typeof(Exception); } }
 
         /// <summary>
-        /// The type of exception being caught by this CatchBlock.
-        /// 
+        /// <para>The type of exception being caught by this CatchBlock.</para>
+        /// <para>
         /// When the CatchBlock is entered, an exception of this type will
         /// be pushed onto the stack.
+        /// </para>
         /// </summary>
         public Type ExceptionType { get; private set; }
 

@@ -5,13 +5,15 @@ namespace Sigil.NonGeneric
     public partial class Emit
     {
         /// <summary>
-        /// Declare a new local of the given type in the current method.
-        /// 
+        /// <para>Declare a new local of the given type in the current method.</para>
+        /// <para>
         /// Name is optional, and only provided for debugging purposes.  It has no
         /// effect on emitted IL.
-        /// 
+        /// </para>
+        /// <para>
         /// Be aware that each local takes some space on the stack, inefficient use of locals
         /// could lead to StackOverflowExceptions at runtime.
+        /// </para>
         /// </summary>
         public Local DeclareLocal<Type>(string name = null)
         {
@@ -19,13 +21,15 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Declare a new local of the given type in the current method.
-        /// 
+        /// <para>Declare a new local of the given type in the current method.</para>
+        /// <para>
         /// Name is optional, and only provided for debugging purposes.  It has no
         /// effect on emitted IL.
-        /// 
+        /// </para>
+        /// <para>
         /// Be aware that each local takes some space on the stack, inefficient use of locals
         /// could lead to StackOverflowExceptions at runtime.
+        /// </para>
         /// </summary>
         public Local DeclareLocal(Type type, string name = null)
         {
@@ -33,13 +37,15 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Declare a new local of the given type in the current method.
-        /// 
+        /// <para>Declare a new local of the given type in the current method.</para>
+        /// <para>
         /// Name is optional, and only provided for debugging purposes.  It has no
         /// effect on emitted IL.
-        /// 
+        /// </para>
+        /// <para>
         /// Be aware that each local takes some space on the stack, inefficient use of locals
         /// could lead to StackOverflowExceptions at runtime.
+        /// </para>
         /// </summary>
         public Emit DeclareLocal<Type>(out Local local, string name = null)
         {
@@ -48,13 +54,15 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Declare a new local of the given type in the current method.
-        /// 
+        /// <para>Declare a new local of the given type in the current method.</para>
+        /// <para>
         /// Name is optional, and only provided for debugging purposes.  It has no
         /// effect on emitted IL.
-        /// 
+        /// </para>
+        /// <para>
         /// Be aware that each local takes some space on the stack, inefficient use of locals
         /// could lead to StackOverflowExceptions at runtime.
+        /// </para>
         /// </summary>
         public Emit DeclareLocal(Type type, out Local local, string name = null)
         {

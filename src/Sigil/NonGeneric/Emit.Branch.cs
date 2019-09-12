@@ -202,9 +202,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Pops one argument from the stack, branches to the given label if the value is false.
-        /// 
-        /// A value is false if it is zero or null.
+        /// <para>Pops one argument from the stack, branches to the given label if the value is false.</para>
+        /// <para>A value is false if it is zero or null.</para>
         /// </summary>
         public Emit BranchIfFalse(Label label)
         {
@@ -213,9 +212,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Pops one argument from the stack, branches to the label with the given name if the value is false.
-        /// 
-        /// A value is false if it is zero or null.
+        /// <para>Pops one argument from the stack, branches to the label with the given name if the value is false.</para>
+        /// <para>A value is false if it is zero or null.</para>
         /// </summary>
         public Emit BranchIfFalse(string name)
         {
@@ -224,9 +222,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Pops one argument from the stack, branches to the given label if the value is true.
-        /// 
-        /// A value is true if it is non-zero or non-null.
+        /// <para>Pops one argument from the stack, branches to the given label if the value is true.</para>
+        /// <para>A value is true if it is non-zero or non-null.</para>
         /// </summary>
         public Emit BranchIfTrue(Label label)
         {
@@ -235,9 +232,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Pops one argument from the stack, branches to the label with the given name if the value is true.
-        /// 
-        /// A value is true if it is non-zero or non-null.
+        /// <para>Pops one argument from the stack, branches to the label with the given name if the value is true.</para>
+        /// <para>A value is true if it is non-zero or non-null.</para>
         /// </summary>
         public Emit BranchIfTrue(string name)
         {

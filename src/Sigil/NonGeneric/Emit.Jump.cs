@@ -5,13 +5,10 @@ namespace Sigil.NonGeneric
     public partial class Emit
     {
         /// <summary>
-        /// Transfers control to another method.
-        /// 
-        /// The parameters and calling convention of method must match the current one's.
-        /// 
-        /// The stack must be empty to jump.
-        /// 
-        /// Like the branching instructions, Jump cannot leave exception blocks.
+        /// <para>Transfers control to another method.</para>
+        /// <para>The parameters and calling convention of method must match the current one's.</para>
+        /// <para>The stack must be empty to jump.</para>
+        /// <para>Like the branching instructions, Jump cannot leave exception blocks.</para>
         /// </summary>
         public Emit Jump(MethodInfo method)
         {

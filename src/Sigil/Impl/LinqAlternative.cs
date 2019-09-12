@@ -556,9 +556,6 @@ namespace Sigil.Impl
 
         private static IEnumerable<T> _Distinct<T>(IEnumerable<T> e, IEqualityComparer<T> c)
         {
-#if COREFX
-            return System.Linq.Enumerable.Distinct(e, c);
-#else
             var h = new Hashtable();
             using (var i = e.GetEnumerator())
             {
@@ -572,7 +569,6 @@ namespace Sigil.Impl
                     }
                 }
             }
-#endif
         }
 
         public static LinqRoot<T> Distinct<T>(IEnumerable<T> e)

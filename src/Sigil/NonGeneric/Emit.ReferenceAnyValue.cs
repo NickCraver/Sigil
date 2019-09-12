@@ -1,5 +1,4 @@
-﻿#if !COREFX // see https://github.com/dotnet/corefx/issues/4543 item 4
-using System;
+﻿using System;
 
 namespace Sigil.NonGeneric
 {
@@ -7,9 +6,8 @@ namespace Sigil.NonGeneric
     {
 
         /// <summary>
-        /// Converts a TypedReference on the stack into a reference to the contained object, given the type contained in the TypedReference.
-        /// 
-        /// __makeref(int) on the stack would become an int&amp;, for example.
+        /// <para>Converts a TypedReference on the stack into a reference to the contained object, given the type contained in the TypedReference.</para>
+        /// <para>__makeref(int) on the stack would become an int&amp;, for example.</para>
         /// </summary>
         public Emit ReferenceAnyValue<Type>()
         {
@@ -18,9 +16,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Converts a TypedReference on the stack into a reference to the contained object, given the type contained in the TypedReference.
-        /// 
-        /// __makeref(int) on the stack would become an int&amp;, for example.
+        /// <para>Converts a TypedReference on the stack into a reference to the contained object, given the type contained in the TypedReference.</para>
+        /// <para>__makeref(int) on the stack would become an int&amp;, for example.</para>
         /// </summary>
         public Emit ReferenceAnyValue(Type type)
         {
@@ -29,4 +26,3 @@ namespace Sigil.NonGeneric
         }
     }
 }
-#endif

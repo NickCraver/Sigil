@@ -7,9 +7,8 @@ namespace Sigil
     public partial class Emit<DelegateType>
     {
         /// <summary>
-        /// Pops a value off the stack and stores it into the given local.
-        /// 
-        /// To create a local, use DeclareLocal().
+        /// <para>Pops a value off the stack and stores it into the given local.</para>
+        /// <para>To create a local, use DeclareLocal().</para>
         /// </summary>
         public Emit<DelegateType> StoreLocal(Local local)
         {

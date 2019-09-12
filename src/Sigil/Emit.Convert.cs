@@ -30,9 +30,8 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Convert a value on the stack to the given non-character primitive type.
-        /// 
-        /// Primitives are int8, uint8, int16, uint16, int32, uint32, int64, uint64, float, double, native int (IntPtr), and unsigned native int (UIntPtr). 
+        /// <para>Convert a value on the stack to the given non-character primitive type.</para>
+        /// <para>Primitives are int8, uint8, int16, uint16, int32, uint32, int64, uint64, float, double, native int (IntPtr), and unsigned native int (UIntPtr). </para>
         /// </summary>
         public Emit<DelegateType> Convert<PrimitiveType>()
             where PrimitiveType : struct
@@ -41,9 +40,8 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Convert a value on the stack to the given non-character primitive type.
-        /// 
-        /// Primitives are int8, uint8, int16, uint16, int32, uint32, int64, uint64, float, double, native int (IntPtr), and unsigned native int (UIntPtr). 
+        /// <para>Convert a value on the stack to the given non-character primitive type.</para>
+        /// <para>Primitives are int8, uint8, int16, uint16, int32, uint32, int64, uint64, float, double, native int (IntPtr), and unsigned native int (UIntPtr). </para>
         /// </summary>
         public Emit<DelegateType> Convert(Type primitiveType)
         {
@@ -135,10 +133,11 @@ namespace Sigil
         }
 
         /// <summary>
+        /// <para>
         /// Convert a value on the stack to the given non-character, non-float, non-double primitive type.
         /// If the conversion would overflow at runtime, an OverflowException is thrown.
-        /// 
-        /// Primitives are int8, uint8, int16, uint16, int32, uint32, int64, uint64, float, double, native int (IntPtr), and unsigned native int (UIntPtr). 
+        /// </para>
+        /// <para>Primitives are int8, uint8, int16, uint16, int32, uint32, int64, uint64, float, double, native int (IntPtr), and unsigned native int (UIntPtr). </para>
         /// </summary>
         public Emit<DelegateType> ConvertOverflow<PrimitiveType>()
         {
@@ -146,10 +145,11 @@ namespace Sigil
         }
 
         /// <summary>
+        /// <para>
         /// Convert a value on the stack to the given non-character, non-float, non-double primitive type.
         /// If the conversion would overflow at runtime, an OverflowException is thrown.
-        /// 
-        /// Primitives are int8, uint8, int16, uint16, int32, uint32, int64, uint64, float, double, native int (IntPtr), and unsigned native int (UIntPtr). 
+        /// </para>
+        /// <para>Primitives are int8, uint8, int16, uint16, int32, uint32, int64, uint64, float, double, native int (IntPtr), and unsigned native int (UIntPtr). </para>
         /// </summary>
         public Emit<DelegateType> ConvertOverflow(Type primitiveType)
         {
@@ -239,10 +239,11 @@ namespace Sigil
         }
 
         /// <summary>
+        /// <para>
         /// Convert a value on the stack to the given non-character, non-float, non-double primitive type as if it were unsigned.
         /// If the conversion would overflow at runtime, an OverflowException is thrown.
-        /// 
-        /// Primitives are int8, uint8, int16, uint16, int32, uint32, int64, uint64, float, double, native int (IntPtr), and unsigned native int (UIntPtr). 
+        /// </para>
+        /// <para>Primitives are int8, uint8, int16, uint16, int32, uint32, int64, uint64, float, double, native int (IntPtr), and unsigned native int (UIntPtr). </para>
         /// </summary>
         public Emit<DelegateType> UnsignedConvertOverflow<PrimitiveType>()
         {
@@ -250,10 +251,11 @@ namespace Sigil
         }
 
         /// <summary>
+        /// <para>
         /// Convert a value on the stack to the given non-character, non-float, non-double primitive type as if it were unsigned.
         /// If the conversion would overflow at runtime, an OverflowException is thrown.
-        /// 
-        /// Primitives are int8, uint8, int16, uint16, int32, uint32, int64, uint64, float, double, native int (IntPtr), and unsigned native int (UIntPtr). 
+        /// </para>
+        /// <para>Primitives are int8, uint8, int16, uint16, int32, uint32, int64, uint64, float, double, native int (IntPtr), and unsigned native int (UIntPtr). </para>
         /// </summary>
         public Emit<DelegateType> UnsignedConvertOverflow(Type primitiveType)
         {
@@ -343,9 +345,8 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Converts a primitive type on the stack to a float, as if it were unsigned.
-        /// 
-        /// Primitives are int8, uint8, int16, uint16, int32, uint32, int64, uint64, float, double, native int (IntPtr), and unsigned native int (UIntPtr).
+        /// <para>Converts a primitive type on the stack to a float, as if it were unsigned.</para>
+        /// <para>Primitives are int8, uint8, int16, uint16, int32, uint32, int64, uint64, float, double, native int (IntPtr), and unsigned native int (UIntPtr).</para>
         /// </summary>
         public Emit<DelegateType> UnsignedConvertToFloat()
         {

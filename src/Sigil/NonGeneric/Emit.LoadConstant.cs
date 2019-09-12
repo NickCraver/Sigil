@@ -6,9 +6,8 @@ namespace Sigil.NonGeneric
     public partial class Emit
     {
         /// <summary>
-        /// Push a 1 onto the stack if b is true, and 0 if false.
-        /// 
-        /// Pushed values are int32s.
+        /// <para>Push a 1 onto the stack if b is true, and 0 if false.</para>
+        /// <para>Pushed values are int32s.</para>
         /// </summary>
         public Emit LoadConstant(bool b)
         {

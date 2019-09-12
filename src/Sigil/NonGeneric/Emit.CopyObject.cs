@@ -5,9 +5,8 @@ namespace Sigil.NonGeneric
     public partial class Emit
     {
         /// <summary>
-        /// Takes a destination pointer, a source pointer as arguments.  Pops both off the stack.
-        /// 
-        /// Copies the given value type from the source to the destination.
+        /// <para>Takes a destination pointer, a source pointer as arguments.  Pops both off the stack.</para>
+        /// <para>Copies the given value type from the source to the destination.</para>
         /// </summary>
         public Emit CopyObject<ValueType>()
             where ValueType : struct
@@ -17,9 +16,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Takes a destination pointer, a source pointer as arguments.  Pops both off the stack.
-        /// 
-        /// Copies the given value type from the source to the destination.
+        /// <para>Takes a destination pointer, a source pointer as arguments.  Pops both off the stack.</para>
+        /// <para>Copies the given value type from the source to the destination.</para>
         /// </summary>
         public Emit CopyObject(Type valueType)
         {

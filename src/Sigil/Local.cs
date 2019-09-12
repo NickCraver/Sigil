@@ -4,18 +4,15 @@ using System;
 namespace Sigil
 {
     /// <summary>
-    /// Represents a variable local to the delegate being created.
-    /// 
-    /// To create a Local, call DeclareLocal().
+    /// <para>Represents a variable local to the delegate being created.</para>
+    /// <para>To create a Local, call DeclareLocal().</para>
     /// </summary>
     public class Local : IOwned, IDisposable
     {
         /// <summary>
-        /// The name of this local.
-        /// 
-        /// If one is omitted during creation a random one is created instead.
-        /// 
-        /// Names are purely for debugging aid, and will not appear in the generated delegate.
+        /// <para>The name of this local.</para>
+        /// <para>If one is omitted during creation a random one is created instead.</para>
+        /// <para>Names are purely for debugging aid, and will not appear in the generated delegate.</para>
         /// </summary>
         public string Name { get; private set; }
 
@@ -75,11 +72,9 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Frees this local.
-        /// 
-        /// While not strictly required, freeing a local allows it's index to be reused.
-        /// 
-        /// Locals are only eligible for reuse when the new local is exactly the same type.
+        /// <para>Frees this local.</para>
+        /// <para>While not strictly required, freeing a local allows it's index to be reused.</para>
+        /// <para>Locals are only eligible for reuse when the new local is exactly the same type.</para>
         /// </summary>
         public void Dispose()
         {

@@ -7,9 +7,8 @@ namespace Sigil
     public partial class Emit<DelegateType>
     {
         /// <summary>
-        /// Leave an exception or catch block, branching to the given label.
-        /// 
-        /// This instruction empties the stack.
+        /// <para>Leave an exception or catch block, branching to the given label.</para>
+        /// <para>This instruction empties the stack.</para>
         /// </summary>
         public Emit<DelegateType> Leave(Label label)
         {
@@ -52,9 +51,8 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Leave an exception or catch block, branching to the label with the given name.
-        /// 
-        /// This instruction empties the stack.
+        /// <para>Leave an exception or catch block, branching to the label with the given name.</para>
+        /// <para>This instruction empties the stack.</para>
         /// </summary>
         public Emit<DelegateType> Leave(string name)
         {

@@ -1,5 +1,4 @@
-﻿#if !COREFX // see https://github.com/dotnet/corefx/issues/4543 item 4
-using Sigil.Impl;
+﻿using Sigil.Impl;
 using System;
 using System.Reflection.Emit;
 
@@ -8,9 +7,8 @@ namespace Sigil
     public partial class Emit<DelegateType>
     {
         /// <summary>
-        /// Converts a pointer or reference to a value on the stack into a TypedReference of the given type.
-        /// 
-        /// TypedReferences can be used with ReferenceAnyType and ReferenceAnyValue to pass arbitrary types as parameters.
+        /// <para>Converts a pointer or reference to a value on the stack into a TypedReference of the given type.</para>
+        /// <para>TypedReferences can be used with ReferenceAnyType and ReferenceAnyValue to pass arbitrary types as parameters.</para>
         /// </summary>
         public Emit<DelegateType> MakeReferenceAny<Type>()
         {
@@ -18,9 +16,8 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Converts a pointer or reference to a value on the stack into a TypedReference of the given type.
-        /// 
-        /// TypedReferences can be used with ReferenceAnyType and ReferenceAnyValue to pass arbitrary types as parameters.
+        /// <para>Converts a pointer or reference to a value on the stack into a TypedReference of the given type.</para>
+        /// <para>TypedReferences can be used with ReferenceAnyType and ReferenceAnyValue to pass arbitrary types as parameters.</para>
         /// </summary>
         public Emit<DelegateType> MakeReferenceAny(Type type)
         {
@@ -42,4 +39,3 @@ namespace Sigil
         }
     }
 }
-#endif

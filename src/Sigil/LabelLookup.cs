@@ -9,9 +9,8 @@ namespace Sigil
     public class LabelLookup
     {
         /// <summary>
-        /// Returns the label with the given name.
-        /// 
-        /// Throws KeyNotFoundException if no label by that name is found".
+        /// <para>Returns the label with the given name.</para>
+        /// <para>Throws KeyNotFoundException if no label by that name is found".</para>
         /// </summary>
         public Label this[string name]
         {

@@ -7,9 +7,8 @@ namespace Sigil
     public partial class Emit<DelegateType>
     {
         /// <summary>
-        /// Expects an instance of the type to be initialized on the stack.
-        /// 
-        /// Initializes all the fields on a value type to null or an appropriate zero value.
+        /// <para>Expects an instance of the type to be initialized on the stack.</para>
+        /// <para>Initializes all the fields on a value type to null or an appropriate zero value.</para>
         /// </summary>
         public Emit<DelegateType> InitializeObject<ValueType>()
         {
@@ -17,9 +16,8 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Expects an instance of the type to be initialized on the stack.
-        /// 
-        /// Initializes all the fields on a value type to null or an appropriate zero value.
+        /// <para>Expects an instance of the type to be initialized on the stack.</para>
+        /// <para>Initializes all the fields on a value type to null or an appropriate zero value.</para>
         /// </summary>
         public Emit<DelegateType> InitializeObject(Type valueType)
         {

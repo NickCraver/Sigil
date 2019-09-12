@@ -6,9 +6,8 @@ using System.Reflection.Emit;
 namespace Sigil
 {
     /// <summary>
-    /// Represents a decompiled delegate.
-    /// 
-    /// The operations of the decompiled delegate can be inspected, and it can be replayed to a new Emit.
+    /// <para>Represents a decompiled delegate.</para>
+    /// <para>The operations of the decompiled delegate can be inspected, and it can be replayed to a new Emit.</para>
     /// </summary>
     public sealed class DisassembledOperations<DelegateType> : IEnumerable<Operation<DelegateType>>
     {
@@ -35,10 +34,11 @@ namespace Sigil
         private object UsageLock = new object();
         private volatile IEnumerable<OperationResultUsage<DelegateType>> _Usage;
         /// <summary>
-        /// Traces where values produced by certain operations are used.
-        /// 
+        /// <para>Traces where values produced by certain operations are used.</para>
+        /// <para>
         /// This is roughly equivalent to having built the disassembled delegate via Sigil originally,
         /// and saving the results of TraceOperationResultUsage().
+        /// </para>
         /// </summary>
         public IEnumerable<OperationResultUsage<DelegateType>> Usage 
         {
@@ -59,10 +59,11 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Returns true if a call to EmitAll will succeed.
-        /// 
+        /// <para>Returns true if a call to EmitAll will succeed.</para>
+        /// <para>
         /// This property will be false if the delegate that was disassembled closed over it's environment,
         /// thereby adding an implicit `this` that cannot be represented (and thus cannot be returned).
+        /// </para>
         /// </summary>
         public bool CanEmit { get; private set; }
 

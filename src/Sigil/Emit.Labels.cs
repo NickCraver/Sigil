@@ -124,11 +124,9 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Defines a new label.
-        /// 
-        /// This label can be used for branching, leave, and switch instructions.
-        /// 
-        /// A label must be marked exactly once after being defined, using the MarkLabel() method.        
+        /// <para>Defines a new label.</para>
+        /// <para>This label can be used for branching, leave, and switch instructions.</para>
+        /// <para>A label must be marked exactly once after being defined, using the MarkLabel() method.        </para>
         /// </summary>
         public Label DefineLabel(string name = null)
         {
@@ -152,11 +150,9 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Defines a new label.
-        /// 
-        /// This label can be used for branching, leave, and switch instructions.
-        /// 
-        /// A label must be marked exactly once after being defined, using the MarkLabel() method.        
+        /// <para>Defines a new label.</para>
+        /// <para>This label can be used for branching, leave, and switch instructions.</para>
+        /// <para>A label must be marked exactly once after being defined, using the MarkLabel() method.        </para>
         /// </summary>
         public Emit<DelegateType> DefineLabel(out Label label, string name = null)
         {
@@ -167,11 +163,9 @@ namespace Sigil
 
 
         /// <summary>
-        /// Marks a label in the instruction stream.
-        /// 
-        /// When branching, leaving, or switching with a label control will be transfered to where it was *marked* not defined.
-        /// 
-        /// Labels can only be marked once, and *must* be marked before creating a delegate.
+        /// <para>Marks a label in the instruction stream.</para>
+        /// <para>When branching, leaving, or switching with a label control will be transfered to where it was *marked* not defined.</para>
+        /// <para>Labels can only be marked once, and *must* be marked before creating a delegate.</para>
         /// </summary>
         public Emit<DelegateType> MarkLabel(Label label)
         {
@@ -216,11 +210,9 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Marks a label with the given name in the instruction stream.
-        /// 
-        /// When branching, leaving, or switching with a label control will be transfered to where it was *marked* not defined.
-        /// 
-        /// Labels can only be marked once, and *must* be marked before creating a delegate.
+        /// <para>Marks a label with the given name in the instruction stream.</para>
+        /// <para>When branching, leaving, or switching with a label control will be transfered to where it was *marked* not defined.</para>
+        /// <para>Labels can only be marked once, and *must* be marked before creating a delegate.</para>
         /// </summary>
         public Emit<DelegateType> MarkLabel(string name)
         {

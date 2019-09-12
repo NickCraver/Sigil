@@ -15,17 +15,20 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Declare a new local of the given type in the current method.
-        /// 
+        /// <para>Declare a new local of the given type in the current method.</para>
+        /// <para>
         /// Name is optional, and only provided for debugging purposes.  It has no
         /// effect on emitted IL.
-        /// 
+        /// </para>
+        /// <para>
         /// Be aware that each local takes some space on the stack, inefficient use of locals
         /// could lead to StackOverflowExceptions at runtime.
-        /// 
+        /// </para>
+        /// <para>
         /// Jil will reuse local index on the stack if the corresponding Local instance has been disposed.
         /// By default Jil will set reused locals to their default value, you can change this behavior
         /// by passing initializeReused = false.
+        /// </para>
         /// </summary>
         public Local DeclareLocal<Type>(string name = null, bool initializeReused = true)
         {
@@ -33,17 +36,20 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Declare a new local of the given type in the current method.
-        /// 
+        /// <para>Declare a new local of the given type in the current method.</para>
+        /// <para>
         /// Name is optional, and only provided for debugging purposes.  It has no
         /// effect on emitted IL.
-        /// 
+        /// </para>
+        /// <para>
         /// Be aware that each local takes some space on the stack, inefficient use of locals
         /// could lead to StackOverflowExceptions at runtime.
-        /// 
+        /// </para>
+        /// <para>
         /// Jil will reuse local index on the stack if the corresponding Local instance has been disposed.
         /// By default Jil will set reused locals to their default value, you can change this behavior
         /// by passing initializeReused = false.
+        /// </para>
         /// </summary>
         public Local DeclareLocal(Type type, string name = null, bool initializeReused = true)
         {
@@ -186,17 +192,20 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Declare a new local of the given type in the current method.
-        /// 
+        /// <para>Declare a new local of the given type in the current method.</para>
+        /// <para>
         /// Name is optional, and only provided for debugging purposes.  It has no
         /// effect on emitted IL.
-        /// 
+        /// </para>
+        /// <para>
         /// Be aware that each local takes some space on the stack, inefficient use of locals
         /// could lead to StackOverflowExceptions at runtime.
-        /// 
+        /// </para>
+        /// <para>
         /// Jil will reuse local index on the stack if the corresponding Local instance has been disposed.
         /// By default Jil will set reused locals to their default value, you can change this behavior
         /// by passing initializeReused = false.
+        /// </para>
         /// </summary>
         public Emit<DelegateType> DeclareLocal<Type>(out Local local, string name = null, bool initializeReused = true)
         {
@@ -204,17 +213,20 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Declare a new local of the given type in the current method.
-        /// 
+        /// <para>Declare a new local of the given type in the current method.</para>
+        /// <para>
         /// Name is optional, and only provided for debugging purposes.  It has no
         /// effect on emitted IL.
-        /// 
+        /// </para>
+        /// <para>
         /// Be aware that each local takes some space on the stack, inefficient use of locals
         /// could lead to StackOverflowExceptions at runtime.
-        /// 
+        /// </para>
+        /// <para>
         /// Jil will reuse local index on the stack if the corresponding Local instance has been disposed.
         /// By default Jil will set reused locals to their default value, you can change this behavior
         /// by passing initializeReused = false.
+        /// </para>
         /// </summary>
         public Emit<DelegateType> DeclareLocal(Type type, out Local local, string name = null, bool initializeReused = true)
         {

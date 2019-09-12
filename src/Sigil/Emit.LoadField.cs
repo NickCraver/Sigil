@@ -8,9 +8,8 @@ namespace Sigil
     public partial class Emit<DelegateType>
     {
         /// <summary>
-        /// Loads a field onto the stack.
-        /// 
-        /// Instance fields expect a reference on the stack, which is popped.
+        /// <para>Loads a field onto the stack.</para>
+        /// <para>Instance fields expect a reference on the stack, which is popped.</para>
         /// </summary>
         public Emit<DelegateType> LoadField(FieldInfo field, bool? isVolatile = null, int? unaligned = null)
         {

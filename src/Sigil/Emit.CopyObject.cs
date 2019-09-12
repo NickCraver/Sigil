@@ -7,9 +7,8 @@ namespace Sigil
     public partial class Emit<DelegateType>
     {
         /// <summary>
-        /// Takes a destination pointer, a source pointer as arguments.  Pops both off the stack.
-        /// 
-        /// Copies the given value type from the source to the destination.
+        /// <para>Takes a destination pointer, a source pointer as arguments.  Pops both off the stack.</para>
+        /// <para>Copies the given value type from the source to the destination.</para>
         /// </summary>
         public Emit<DelegateType> CopyObject<ValueType>()
             where ValueType : struct
@@ -18,9 +17,8 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Takes a destination pointer, a source pointer as arguments.  Pops both off the stack.
-        /// 
-        /// Copies the given value type from the source to the destination.
+        /// <para>Takes a destination pointer, a source pointer as arguments.  Pops both off the stack.</para>
+        /// <para>Copies the given value type from the source to the destination.</para>
         /// </summary>
         public Emit<DelegateType> CopyObject(Type valueType)
         {

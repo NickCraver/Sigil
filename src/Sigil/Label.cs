@@ -4,20 +4,16 @@ using System;
 namespace Sigil
 {
     /// <summary>
-    /// Represents a Label in a CIL stream, and thus a Leave and Branch target.
-    /// 
-    /// To create a Label call DefineLabel().
-    /// 
-    /// Before creating a delegate, all Labels must be marked.  To mark a label, call MarkLabel().
+    /// <para>Represents a Label in a CIL stream, and thus a Leave and Branch target.</para>
+    /// <para>To create a Label call DefineLabel().</para>
+    /// <para>Before creating a delegate, all Labels must be marked.  To mark a label, call MarkLabel().</para>
     /// </summary>
     public class Label : IOwned
     {
         /// <summary>
-        /// The name of this Label.
-        /// 
-        /// If one is omitted during creation a random one is created instead.
-        /// 
-        /// Names are purely for debugging aid, and will not appear in the generated delegate.
+        /// <para>The name of this Label.</para>
+        /// <para>If one is omitted during creation a random one is created instead.</para>
+        /// <para>Names are purely for debugging aid, and will not appear in the generated delegate.</para>
         /// </summary>
         public string Name { get; private set; }
 

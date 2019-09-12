@@ -4,9 +4,8 @@ namespace Sigil.NonGeneric
     public partial class Emit
     {
         /// <summary>
-        /// Pushes a pointer to the given local onto the stack.
-        /// 
-        /// To create a local, use DeclareLocal.
+        /// <para>Pushes a pointer to the given local onto the stack.</para>
+        /// <para>To create a local, use DeclareLocal.</para>
         /// </summary>
         public Emit LoadLocalAddress(Local local)
         {

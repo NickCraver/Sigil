@@ -7,9 +7,8 @@ namespace Sigil
     public partial class Emit<DelegateType>
     {
         /// <summary>
-        /// Loads the value in the given local onto the stack.
-        /// 
-        /// To create a local, use DeclareLocal().
+        /// <para>Loads the value in the given local onto the stack.</para>
+        /// <para>To create a local, use DeclareLocal().</para>
         /// </summary>
         public Emit<DelegateType> LoadLocal(Local local)
         {

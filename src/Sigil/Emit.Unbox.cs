@@ -7,9 +7,8 @@ namespace Sigil
     public partial class Emit<DelegateType>
     {
         /// <summary>
-        /// Pops a boxed value from the stack and pushes a pointer to it's unboxed value.
-        /// 
-        /// To load the value directly onto the stack, use UnboxAny().
+        /// <para>Pops a boxed value from the stack and pushes a pointer to it's unboxed value.</para>
+        /// <para>To load the value directly onto the stack, use UnboxAny().</para>
         /// </summary>
         public Emit<DelegateType> Unbox<ValueType>()
         {
@@ -17,9 +16,8 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Pops a boxed value from the stack and pushes a pointer to it's unboxed value.
-        /// 
-        /// To load the value directly onto the stack, use UnboxAny().
+        /// <para>Pops a boxed value from the stack and pushes a pointer to it's unboxed value.</para>
+        /// <para>To load the value directly onto the stack, use UnboxAny().</para>
         /// </summary>
         public Emit<DelegateType> Unbox(Type valueType)
         {
@@ -46,9 +44,8 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Pops a boxed value from the stack, unboxes it and pushes the value onto the stack.
-        /// 
-        /// To get an address for the unboxed value instead, use Unbox().
+        /// <para>Pops a boxed value from the stack, unboxes it and pushes the value onto the stack.</para>
+        /// <para>To get an address for the unboxed value instead, use Unbox().</para>
         /// </summary>
         public Emit<DelegateType> UnboxAny<ValueType>()
         {
@@ -56,9 +53,8 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Pops a boxed value from the stack, unboxes it and pushes the value onto the stack.
-        /// 
-        /// To get an address for the unboxed value instead, use Unbox().
+        /// <para>Pops a boxed value from the stack, unboxes it and pushes the value onto the stack.</para>
+        /// <para>To get an address for the unboxed value instead, use Unbox().</para>
         /// </summary>
         public Emit<DelegateType> UnboxAny(Type valueType)
         {

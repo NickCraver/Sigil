@@ -5,9 +5,8 @@ namespace Sigil.NonGeneric
     public partial class Emit
     {
         /// <summary>
-        /// Pops a boxed value from the stack and pushes a pointer to it's unboxed value.
-        /// 
-        /// To load the value directly onto the stack, use UnboxAny().
+        /// <para>Pops a boxed value from the stack and pushes a pointer to it's unboxed value.</para>
+        /// <para>To load the value directly onto the stack, use UnboxAny().</para>
         /// </summary>
         public Emit Unbox<ValueType>()
         {
@@ -16,9 +15,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Pops a boxed value from the stack and pushes a pointer to it's unboxed value.
-        /// 
-        /// To load the value directly onto the stack, use UnboxAny().
+        /// <para>Pops a boxed value from the stack and pushes a pointer to it's unboxed value.</para>
+        /// <para>To load the value directly onto the stack, use UnboxAny().</para>
         /// </summary>
         public Emit Unbox(Type valueType)
         {
@@ -27,9 +25,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Pops a boxed value from the stack, unboxes it and pushes the value onto the stack.
-        /// 
-        /// To get an address for the unboxed value instead, use Unbox().
+        /// <para>Pops a boxed value from the stack, unboxes it and pushes the value onto the stack.</para>
+        /// <para>To get an address for the unboxed value instead, use Unbox().</para>
         /// </summary>
         public Emit UnboxAny<ValueType>()
         {
@@ -38,9 +35,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Pops a boxed value from the stack, unboxes it and pushes the value onto the stack.
-        /// 
-        /// To get an address for the unboxed value instead, use Unbox().
+        /// <para>Pops a boxed value from the stack, unboxes it and pushes the value onto the stack.</para>
+        /// <para>To get an address for the unboxed value instead, use Unbox().</para>
         /// </summary>
         public Emit UnboxAny(Type valueType)
         {

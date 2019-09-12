@@ -135,9 +135,8 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Called to confirm that the IL emit'd to date can be turned into a delegate without error.
-        /// 
-        /// Checks that the stack is empty, that all paths returns, that all labels are marked, etc. etc.
+        /// <para>Called to confirm that the IL emit'd to date can be turned into a delegate without error.</para>
+        /// <para>Checks that the stack is empty, that all paths returns, that all labels are marked, etc. etc.</para>
         /// </summary>
         private void Validate()
         {

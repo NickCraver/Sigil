@@ -1,5 +1,4 @@
-﻿#if !COREFXTODO // see https://github.com/dotnet/corefx/issues/4543 item 1
-using Sigil.Impl;
+﻿using Sigil.Impl;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -8,9 +7,8 @@ using System.Reflection.Emit;
 namespace Sigil
 {
     /// <summary>
-    /// Helper for disassembling delegates into a series of Emit operations.
-    /// 
-    /// This can be used to inspect delegates, or combine them via Sigil.
+    /// <para>Helper for disassembling delegates into a series of Emit operations.</para>
+    /// <para>This can be used to inspect delegates, or combine them via Sigil.</para>
     /// </summary>
     /// <typeparam name="DelegateType">The type of delegate being disassembled</typeparam>
     public sealed class Disassembler<DelegateType>
@@ -3490,14 +3488,13 @@ namespace Sigil
                     {
                         return new object[] { ReadShort(cil, operandStart) };
                     }
- 
+
                 case OperandType.ShortInlineVar:
                     advance += 1;
                     return new object[] { cil[operandStart] };
-                
+
                 default: throw new Exception("Unexpected operand type [" + op.OperandType + "]");
             }
         }
     }
 }
-#endif

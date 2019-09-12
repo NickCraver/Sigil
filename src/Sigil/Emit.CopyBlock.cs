@@ -7,9 +7,8 @@ namespace Sigil
     public partial class Emit<DelegateType>
     {
         /// <summary>
-        /// Expects a destination pointer, a source pointer, and a length on the stack.  Pops all three values.
-        /// 
-        /// Copies length bytes from destination to the source.
+        /// <para>Expects a destination pointer, a source pointer, and a length on the stack.  Pops all three values.</para>
+        /// <para>Copies length bytes from destination to the source.</para>
         /// </summary>
         public Emit<DelegateType> CopyBlock(bool isVolatile = false, int? unaligned = null)
         {

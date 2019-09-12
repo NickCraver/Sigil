@@ -7,9 +7,8 @@ namespace Sigil
     public partial class Emit<DelegateType>
     {
         /// <summary>
-        /// Pops a value off the stack and branches to the label at the index of that value in the given labels.
-        /// 
-        /// If the value is out of range, execution falls through to the next instruction.
+        /// <para>Pops a value off the stack and branches to the label at the index of that value in the given labels.</para>
+        /// <para>If the value is out of range, execution falls through to the next instruction.</para>
         /// </summary>
         public Emit<DelegateType> Switch(params Label[] labels)
         {
@@ -70,9 +69,8 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Pops a value off the stack and branches to the label at the index of that value in the given label names.
-        /// 
-        /// If the value is out of range, execution falls through to the next instruction.
+        /// <para>Pops a value off the stack and branches to the label at the index of that value in the given label names.</para>
+        /// <para>If the value is out of range, execution falls through to the next instruction.</para>
         /// </summary>
         public Emit<DelegateType> Switch(params string[] names)
         {

@@ -9,9 +9,8 @@ namespace Sigil
     public partial class Emit<DelegateType>
     {
         /// <summary>
-        /// Pops an object reference off the stack, and pushes a pointer to the given method's implementation on that object.
-        /// 
-        /// For static or non-virtual functions, use LoadFunctionPointer
+        /// <para>Pops an object reference off the stack, and pushes a pointer to the given method's implementation on that object.</para>
+        /// <para>For static or non-virtual functions, use LoadFunctionPointer</para>
         /// </summary>
         public Emit<DelegateType> LoadVirtualFunctionPointer(MethodInfo method)
         {
@@ -33,12 +32,12 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Pops an object reference off the stack, and pushes a pointer to the given method's implementation on that object.
-        /// 
-        /// For static or non-virtual functions, use LoadFunctionPointer
-        /// 
+        /// <para>Pops an object reference off the stack, and pushes a pointer to the given method's implementation on that object.</para>
+        /// <para>For static or non-virtual functions, use LoadFunctionPointer</para>
+        /// <para>
         /// This method is provided as MethodBuilder cannot be inspected for parameter information at runtime.  If the passed parameterTypes
         /// do not match the given method, the produced code will be invalid.
+        /// </para>
         /// </summary>
         public Emit<DelegateType> LoadVirtualFunctionPointer(MethodBuilder method, Type[] parameterTypes)
         {

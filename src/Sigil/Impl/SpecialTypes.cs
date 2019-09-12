@@ -2,13 +2,10 @@
 namespace Sigil.Impl
 {
     /// <summary>
-    /// This type represents a provably null value on the stack.
-    /// 
-    /// Nulls typically arrive on the stack via LoadNull.
-    /// 
-    /// Null can be assigned to any reference type safely, without the need for a CastClass.
-    /// 
-    /// This type is exposed to allow for stack assertions containing null via Emit.MarkLabel.
+    /// <para>This type represents a provably null value on the stack.</para>
+    /// <para>Nulls typically arrive on the stack via LoadNull.</para>
+    /// <para>Null can be assigned to any reference type safely, without the need for a CastClass.</para>
+    /// <para>This type is exposed to allow for stack assertions containing null via Emit.MarkLabel.</para>
     /// </summary>
     internal sealed class NullType
     {
@@ -16,12 +13,12 @@ namespace Sigil.Impl
     }
 
     /// <summary>
-    /// This type represents a "native int" on the stack.
-    /// 
+    /// <para>This type represents a "native int" on the stack.</para>
+    /// <para>
     /// The size of native int varies depending on the architecture an assembly is executed on.
     /// Raw pointers are often of type native int.
-    /// 
-    /// This type is exposed to allow for stack assertions containing native int via Emit.MarkLabel.
+    /// </para>
+    /// <para>This type is exposed to allow for stack assertions containing native int via Emit.MarkLabel.</para>
     /// </summary>
     internal sealed class NativeIntType { }
 

@@ -5,9 +5,8 @@ namespace Sigil.NonGeneric
     public partial class Emit
     {
         /// <summary>
-        /// Pops a pointer from the stack, and pushes the given value type it points to onto the stack.
-        /// 
-        /// For primitive and reference types, use LoadIndirect().
+        /// <para>Pops a pointer from the stack, and pushes the given value type it points to onto the stack.</para>
+        /// <para>For primitive and reference types, use LoadIndirect().</para>
         /// </summary>
         public Emit LoadObject<ValueType>(bool isVolatile = false, int? unaligned = null)
             where ValueType : struct
@@ -17,9 +16,8 @@ namespace Sigil.NonGeneric
         }
 
         /// <summary>
-        /// Pops a pointer from the stack, and pushes the given value type it points to onto the stack.
-        /// 
-        /// For primitive and reference types, use LoadIndirect().
+        /// <para>Pops a pointer from the stack, and pushes the given value type it points to onto the stack.</para>
+        /// <para>For primitive and reference types, use LoadIndirect().</para>
         /// </summary>
         public Emit LoadObject(Type valueType, bool isVolatile = false, int? unaligned = null)
         {

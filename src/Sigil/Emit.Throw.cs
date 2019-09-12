@@ -7,9 +7,8 @@ namespace Sigil
     public partial class Emit<DelegateType>
     {
         /// <summary>
-        /// Pops a value off the stack and throws it as an exception.
-        /// 
-        /// Throw expects the value to be or extend from a System.Exception.
+        /// <para>Pops a value off the stack and throws it as an exception.</para>
+        /// <para>Throw expects the value to be or extend from a System.Exception.</para>
         /// </summary>
         public Emit<DelegateType> Throw()
         {

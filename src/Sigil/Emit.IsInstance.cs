@@ -7,9 +7,8 @@ namespace Sigil
     public partial class Emit<DelegateType>
     {
         /// <summary>
-        /// Pops a value from the stack and casts to the given type if possible pushing the result, otherwise pushes a null.
-        /// 
-        /// This is analogous to C#'s `as` operator.
+        /// <para>Pops a value from the stack and casts to the given type if possible pushing the result, otherwise pushes a null.</para>
+        /// <para>This is analogous to C#'s `as` operator.</para>
         /// </summary>
         public Emit<DelegateType> IsInstance<Type>()
         {
@@ -17,9 +16,8 @@ namespace Sigil
         }
 
         /// <summary>
-        /// Pops a value from the stack and casts to the given type if possible pushing the result, otherwise pushes a null.
-        /// 
-        /// This is analogous to C#'s `as` operator.
+        /// <para>Pops a value from the stack and casts to the given type if possible pushing the result, otherwise pushes a null.</para>
+        /// <para>This is analogous to C#'s `as` operator.</para>
         /// </summary>
         public Emit<DelegateType> IsInstance(Type type)
         {

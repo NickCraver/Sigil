@@ -14,20 +14,19 @@ namespace Sigil.Impl
 
         public bool StartsExceptionBlock { get; internal set; }
         public bool EndsExceptionBlock { get; internal set; }
-        
+
         public bool StartsCatchBlock { get; internal set; }
         public bool EndsCatchBlock { get; internal set; }
-        
+
         public bool StartsFinallyBlock { get; internal set; }
         public bool EndsFinallyBlock { get; internal set; }
-        
+
         public bool DeclaresLocal { get; internal set; }
 
         public OpCode? IsInstruction { get; internal set; }
 
         public Type MethodReturnType { get; internal set; }
         public LinqRoot<Type> MethodParameterTypes { get; internal set; }
-#if !COREFX // see https://github.com/dotnet/corefx/issues/4543 item 4
         public bool TakesTypedReference()
         {
             var instr = this;
@@ -36,7 +35,6 @@ namespace Sigil.Impl
 
             return instr.MethodParameterTypes.Any(p => p == typeof(TypedReference));
         }
-#endif
 
         public bool TakesManagedPointer()
         {
@@ -190,11 +188,7 @@ namespace Sigil.Impl
                     ).ToDictionary(d => (int)d.Index, d => d);
         }
 
-#if DOTNET5_2
-        private static Regex _ExtractLocal = new Regex(@"\s+(?<locId>\d+)");
-#else
         private static Regex _ExtractLocal = new Regex(@"\s+(?<locId>\d+)", RegexOptions.Compiled);
-#endif
 
         private static Local ExtractLocal(string from, LinqList<Local> locals, int ix)
         {
@@ -245,8 +239,8 @@ namespace Sigil.Impl
             InstructionSizes.Insert(ix, () => InstructionSize.Get(op));
 
             Buffer.Insert(
-                ix, 
-                (il, logOnly, log) => 
+                ix,
+                (il, logOnly, log) =>
                 {
                     if (!logOnly)
                     {
@@ -282,7 +276,7 @@ namespace Sigil.Impl
             LengthCache.Clear();
 
             Buffer.Add(
-                (il, logOnly, log) => 
+                (il, logOnly, log) =>
                 {
                     if (!logOnly)
                     {
@@ -295,7 +289,7 @@ namespace Sigil.Impl
                     }
                     else
                     {
-                        log.AppendLine(op.ToString()); 
+                        log.AppendLine(op.ToString());
                     }
                 }
             );
@@ -372,7 +366,7 @@ namespace Sigil.Impl
             LengthCache.Clear();
 
             Buffer.Add(
-                (il, logOnly, log) => 
+                (il, logOnly, log) =>
                 {
                     if (!logOnly)
                     {
@@ -408,13 +402,13 @@ namespace Sigil.Impl
             LengthCache.Clear();
 
             Buffer.Add(
-                (il, logOnly, log) => 
+                (il, logOnly, log) =>
                 {
                     if (!logOnly)
                     {
                         il.Emit(op, asInt);
                     }
-                    
+
                     log.AppendLine(op + " " + ui);
                 }
             );
@@ -431,14 +425,14 @@ namespace Sigil.Impl
             LengthCache.Clear();
 
             Buffer.Add(
-                (il, logOnly, log) => 
+                (il, logOnly, log) =>
                 {
                     if (!logOnly)
                     {
                         il.Emit(op, l);
                     }
-                    
-                    log.AppendLine(op + " " + l); 
+
+                    log.AppendLine(op + " " + l);
                 }
             );
 
@@ -452,7 +446,7 @@ namespace Sigil.Impl
             long asLong;
             unchecked
             {
-                asLong = (long)ul; 
+                asLong = (long)ul;
             }
 
             InstructionSizes.Add(() => InstructionSize.Get(op));
@@ -460,14 +454,14 @@ namespace Sigil.Impl
             LengthCache.Clear();
 
             Buffer.Add(
-                (il, logOnly, log) => 
+                (il, logOnly, log) =>
                 {
                     if (!logOnly)
                     {
                         il.Emit(op, asLong);
                     }
-                    
-                    log.AppendLine(op + " " + ul); 
+
+                    log.AppendLine(op + " " + ul);
                 }
             );
 
@@ -483,14 +477,14 @@ namespace Sigil.Impl
             LengthCache.Clear();
 
             Buffer.Add(
-                (il, logOnly, log) => 
+                (il, logOnly, log) =>
                 {
                     if (!logOnly)
                     {
                         il.Emit(op, f);
                     }
-                    
-                    log.AppendLine(op + " " + f); 
+
+                    log.AppendLine(op + " " + f);
                 }
             );
 
@@ -506,13 +500,13 @@ namespace Sigil.Impl
             LengthCache.Clear();
 
             Buffer.Add(
-                (il, logOnly, log) => 
+                (il, logOnly, log) =>
                 {
                     if (!logOnly)
                     {
                         il.Emit(op, d);
                     }
-                    
+
                     log.AppendLine(op + " " + d);
                 });
 
@@ -528,7 +522,7 @@ namespace Sigil.Impl
             LengthCache.Clear();
 
             Buffer.Add(
-                (il, logOnly, log) => 
+                (il, logOnly, log) =>
                 {
                     if (!logOnly)
                     {
@@ -537,7 +531,7 @@ namespace Sigil.Impl
 
                     var mtdString = method is MethodBuilder ? method.Name : method.ToString();
 
-                    log.AppendLine(op + " " + mtdString); 
+                    log.AppendLine(op + " " + mtdString);
                 }
             );
 
@@ -602,14 +596,14 @@ namespace Sigil.Impl
             LengthCache.Clear();
 
             Buffer.Add(
-                (il, logOnly, log) => 
+                (il, logOnly, log) =>
                 {
                     if (!logOnly)
                     {
                         il.Emit(op, cons);
                     }
-                    
-                    log.AppendLine(op + " " + cons); 
+
+                    log.AppendLine(op + " " + cons);
                 }
             );
 
@@ -625,14 +619,14 @@ namespace Sigil.Impl
             LengthCache.Clear();
 
             Buffer.Add(
-                (il, logOnly, log) => 
+                (il, logOnly, log) =>
                 {
                     if (!logOnly)
                     {
                         il.Emit(op, type);
                     }
 
-                    log.AppendLine(op + " " + type); 
+                    log.AppendLine(op + " " + type);
                 }
             );
 
@@ -648,14 +642,14 @@ namespace Sigil.Impl
             LengthCache.Clear();
 
             Buffer.Add(
-                (il, logOnly, log) => 
+                (il, logOnly, log) =>
                 {
                     if (!logOnly)
                     {
                         il.Emit(op, field);
                     }
 
-                    log.AppendLine(op + " " + field); 
+                    log.AppendLine(op + " " + field);
                 }
             );
 
@@ -671,13 +665,13 @@ namespace Sigil.Impl
             LengthCache.Clear();
 
             Buffer.Add(
-                (il, logOnly, log) => 
+                (il, logOnly, log) =>
                 {
                     if (!logOnly)
                     {
                         il.Emit(op, str);
                     }
-                    
+
                     log.AppendLine(op + " '" + str.Replace("'", @"\'") + "'");
                 }
             );
@@ -704,7 +698,7 @@ namespace Sigil.Impl
             LengthCache.Clear();
 
             Buffer.Add(
-                (il, logOnly, log) => 
+                (il, logOnly, log) =>
                 {
                     if (!logOnly)
                     {
@@ -779,7 +773,7 @@ namespace Sigil.Impl
             LengthCache.Clear();
 
             Buffer.Add(
-                (il, logOnly, log) => 
+                (il, logOnly, log) =>
                     {
                         if (!logOnly)
                         {
@@ -921,7 +915,7 @@ namespace Sigil.Impl
             LengthCache.Clear();
 
             Buffer.Add(
-                (il, logOnly, log) => 
+                (il, logOnly, log) =>
                 {
                     if (!logOnly)
                     {
@@ -1058,7 +1052,7 @@ namespace Sigil.Impl
                     }
 
                     if (l != null) return l.Value;
-                    
+
                     forIl = il;
                     l = forIl.DefineLabel();
 
@@ -1070,7 +1064,7 @@ namespace Sigil.Impl
             LengthCache.Clear();
 
             Buffer.Add(
-                (il, logOnly, log) => 
+                (il, logOnly, log) =>
                 {
                     if (!logOnly)
                     {
@@ -1137,7 +1131,7 @@ namespace Sigil.Impl
             LengthCache.Clear();
 
             Buffer.Add(
-                (il, logOnly,log) => 
+                (il, logOnly,log) =>
                 {
                     if (!logOnly)
                     {

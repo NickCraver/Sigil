@@ -3,9 +3,8 @@
 namespace Sigil
 {
     /// <summary>
-    /// Represents a finally block, which appears within an ExceptionBlock.
-    /// 
-    /// This is roughly analogous to `finally` in C#.
+    /// <para>Represents a finally block, which appears within an ExceptionBlock.</para>
+    /// <para>This is roughly analogous to `finally` in C#.</para>
     /// </summary>
     public class FinallyBlock : IOwned
     {

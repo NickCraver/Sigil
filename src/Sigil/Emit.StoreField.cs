@@ -8,9 +8,8 @@ namespace Sigil
     public partial class Emit<DelegateType>
     {
         /// <summary>
-        /// Pops a value from the stack and stores it in the given field.
-        /// 
-        /// If the field is an instance member, both a value and a reference to the instance are popped from the stack.
+        /// <para>Pops a value from the stack and stores it in the given field.</para>
+        /// <para>If the field is an instance member, both a value and a reference to the instance are popped from the stack.</para>
         /// </summary>
         public Emit<DelegateType> StoreField(FieldInfo field, bool isVolatile = false, int? unaligned = null)
         {
