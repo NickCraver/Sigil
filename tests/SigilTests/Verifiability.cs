@@ -428,6 +428,10 @@ namespace SigilTests
         {
             var fld = typeof(LdfldaClass).GetField("Field");
 
+            // Ldflda on INIT ONLY fields isn't verifiable in framework, but is in Core now
+            //    so we still need to forbid it by default for portability 
+            //    purposes but this part of the test can't run in Core
+#if !NETCOREAPP
             {
                 var dyn = new DynamicMethod("E1", typeof(void), new[] { typeof(LdfldaClass) });
                 var il = dyn.GetILGenerator();
@@ -439,6 +443,7 @@ namespace SigilTests
                 var d1 = (Action<LdfldaClass>)dyn.CreateDelegate(typeof(Action<LdfldaClass>));
                 Assert.Throws<VerificationException>(() => d1(new LdfldaClass()));
             }
+#endif
 
             {
                 var asm = AssemblyBuilder.DefineDynamicAssembly(new AssemblyName("Foo"), AssemblyBuilderAccess.Run);
