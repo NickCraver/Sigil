@@ -124,9 +124,21 @@ namespace SigilTests
             Assert.False(d1(null));
         }
 
+        class _MultipleTailcalls
+        {
+            public _MultipleTailcalls() { }
+
+            public override string ToString()
+            {
+                return "123";
+            }
+        }
+
         [Fact]
         public void MultipleTailcalls()
         {
+            var probe = typeof(System.Diagnostics.Debugger).GetMethod(nameof(System.Diagnostics.Debugger.Break), BindingFlags.Static | BindingFlags.Public);
+
             var toString = typeof(object).GetMethod("ToString");
 
             var e1 = Emit<Func<int, string>>.NewDynamicMethod();
@@ -151,11 +163,12 @@ namespace SigilTests
             e1.Return();
 
             e1.MarkLabel(l1);
-            e1.LoadConstant(123);
-            e1.Box<int>();
+            e1.NewObject<_MultipleTailcalls>();
             e1.CallVirtual(toString);
             e1.Return();
 
+            // calli is can get tailcall _in theory_ but in practice it breaks the CLR... often
+            //   so Sigil won't actually emit it (but it's still tested here for when it did)
             e1.MarkLabel(l2);
             e1.NewObject<object>();
             e1.Duplicate();
@@ -174,7 +187,7 @@ namespace SigilTests
             Assert.Equal("", d1(2));
             Assert.Equal("System.String", d1(314));
 
-            Assert.Equal("ldarg.0\r\nldc.i4.0\r\nbeq.s l1\r\nldarg.0\r\nldc.i4.1\r\nbeq.s l2\r\nldarg.0\r\nldc.i4.2\r\nbeq.s l3\r\nldstr 'Foo'\r\ntail.call System.String ToString()\r\nret\r\n\r\nl1:\r\nldc.i4.s 123\r\nbox System.Int32\r\ntail.callvirt System.String ToString()\r\nret\r\n\r\nl2:\r\nnewobj Void .ctor()\r\ndup\r\nldvirtftn System.String ToString()\r\ncalli Standard, HasThis System.String \r\nret\r\n\r\nl3:\r\nldstr ''\r\nret\r\n", instrs);
+            Assert.Equal("ldarg.0\r\nldc.i4.0\r\nbeq.s l1\r\nldarg.0\r\nldc.i4.1\r\nbeq.s l2\r\nldarg.0\r\nldc.i4.2\r\nbeq.s l3\r\nldstr 'Foo'\r\ntail.call System.String ToString()\r\nret\r\n\r\nl1:\r\nnewobj Void .ctor()\r\ntail.callvirt System.String ToString()\r\nret\r\n\r\nl2:\r\nnewobj Void .ctor()\r\ndup\r\nldvirtftn System.String ToString()\r\ncalli Standard, HasThis System.String \r\nret\r\n\r\nl3:\r\nldstr ''\r\nret\r\n", instrs);
         }
 
         [Fact]
