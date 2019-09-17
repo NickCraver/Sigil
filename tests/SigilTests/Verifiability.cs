@@ -221,6 +221,9 @@ namespace SigilTests
         [Fact]
         public void Localloc()
         {
+            // only framework seems to throw here, so we still need to RESTRICT this
+            //   for portability but this part of the test is bogus
+#if !NETCOREAPP
             {
                 var dyn = new DynamicMethod("E1", typeof(void), Type.EmptyTypes);
                 var il = dyn.GetILGenerator();
@@ -232,6 +235,7 @@ namespace SigilTests
                 var d1 = (Action)dyn.CreateDelegate(typeof(Action));
                 Assert.Throws<VerificationException>(() => d1());
             }
+#endif
 
             {
                 var asm = AssemblyBuilder.DefineDynamicAssembly(new AssemblyName("Foo"), AssemblyBuilderAccess.Run);
