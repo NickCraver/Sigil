@@ -176,7 +176,23 @@ namespace SigilTests
         {
             var writeLine = typeof(Console).GetMethod("WriteLine", Type.EmptyTypes);
 
-            // SOME versions of .NET are OK with verifying Calli; but for now we need to bail on all
+            // only framework seems to throw here, so we still need to RESTRICT this
+            //   for portability but this part of the test is bogus
+#if !NETCOREAPP
+            {
+                var dyn = new DynamicMethod("E1", typeof(void), Type.EmptyTypes);
+                var il = dyn.GetILGenerator();
+                il.Emit(OpCodes.Ldftn, writeLine);
+
+                il.EmitCalli(OpCodes.Calli, System.Runtime.InteropServices.CallingConvention.StdCall, typeof(void), Type.EmptyTypes);
+
+                il.Emit(OpCodes.Ret);
+
+                var d1 = (Action)dyn.CreateDelegate(typeof(Action));
+
+                Assert.Throws<VerificationException>(() => d1());
+            }
+#endif
 
             {
                 var asm = AssemblyBuilder.DefineDynamicAssembly(new AssemblyName("Foo"), AssemblyBuilderAccess.Run);
