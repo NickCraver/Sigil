@@ -9,6 +9,82 @@ namespace SigilTests
 {
     public partial class Errors
     {
+        [Fact]
+        public void OverflowsOnlyAcceptsIntegers()
+        {
+            var ex1 =
+                Assert.Throws<SigilVerificationException>(
+                    () =>
+                    {
+                        var e1 = Emit<Func<double, double, double>>.NewDynamicMethod("E1");
+                        e1.LoadArgument(0);
+                        e1.LoadArgument(1);
+                        e1.MultiplyOverflow();
+                    }
+                );
+            Assert.Equal("MultiplyOverflow expected an int, long, or native int; found double", ex1.Message);
+
+            var ex2 =
+                Assert.Throws<SigilVerificationException>(
+                    () =>
+                    {
+                        var e1 = Emit<Func<double, double, double>>.NewDynamicMethod("E1");
+                        e1.LoadArgument(0);
+                        e1.LoadArgument(1);
+                        e1.UnsignedMultiplyOverflow();
+                    }
+                );
+            Assert.Equal("UnsignedMultiplyOverflow expected an int, long, or native int; found double", ex2.Message);
+
+            var ex3 =
+                Assert.Throws<SigilVerificationException>(
+                    () =>
+                    {
+                        var e1 = Emit<Func<double, double, double>>.NewDynamicMethod("E1");
+                        e1.LoadArgument(0);
+                        e1.LoadArgument(1);
+                        e1.AddOverflow();
+                    }
+                );
+            Assert.Equal("AddOverflow expected an int, long, or native int; found double", ex3.Message);
+
+            var ex4 =
+                Assert.Throws<SigilVerificationException>(
+                    () =>
+                    {
+                        var e1 = Emit<Func<double, double, double>>.NewDynamicMethod("E1");
+                        e1.LoadArgument(0);
+                        e1.LoadArgument(1);
+                        e1.UnsignedAddOverflow();
+                    }
+                );
+            Assert.Equal("UnsignedAddOverflow expected an int, long, or native int; found double", ex4.Message);
+
+            var ex5 =
+                Assert.Throws<SigilVerificationException>(
+                    () =>
+                    {
+                        var e1 = Emit<Func<double, double, double>>.NewDynamicMethod("E1");
+                        e1.LoadArgument(0);
+                        e1.LoadArgument(1);
+                        e1.SubtractOverflow();
+                    }
+                );
+            Assert.Equal("SubtractOverflow expected an int, long, or native int; found double", ex5.Message);
+
+            var ex6 =
+                Assert.Throws<SigilVerificationException>(
+                    () =>
+                    {
+                        var e1 = Emit<Func<double, double, double>>.NewDynamicMethod("E1");
+                        e1.LoadArgument(0);
+                        e1.LoadArgument(1);
+                        e1.UnsignedSubtractOverflow();
+                    }
+                );
+            Assert.Equal("UnsignedSubtractOverflow expected an int, long, or native int; found double", ex6.Message);
+        }
+
         private class _CallNonBaseClassConstructor1
         {
             public string Foo;

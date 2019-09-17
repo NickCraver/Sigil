@@ -7,43 +7,78 @@ namespace Sigil
 {
     public partial class Emit<DelegateType>
     {
-        private void VerifyAndDoArithmetic(string name, OpCode addOp, bool allowReference = false)
+        private void VerifyAndDoArithmetic(string name, OpCode addOp, bool allowReference = false, bool allowsFloatingPoint = true)
         {
             // See: http://msdn.microsoft.com/en-us/library/system.reflection.emit.opcodes.add.aspx
             //   For legal arguments table
             IEnumerable<StackTransition> transitions;
             if (allowReference)
             {
-                transitions =
-                    new[] 
-                    {
-                        new StackTransition(new [] { typeof(int), typeof(int) }, new [] { typeof(int) }),
-                        new StackTransition(new [] { typeof(int), typeof(NativeIntType) }, new [] { typeof(NativeIntType) }),
-                        new StackTransition(new [] { typeof(long), typeof(long) }, new [] { typeof(long) }),
-                        new StackTransition(new [] { typeof(NativeIntType), typeof(int) }, new [] { typeof(NativeIntType) }),
-                        new StackTransition(new [] { typeof(NativeIntType), typeof(NativeIntType) }, new [] { typeof(NativeIntType) }),
-                        new StackTransition(new [] { typeof(float), typeof(float) }, new [] { typeof(float) }),
-                        new StackTransition(new [] { typeof(double), typeof(double) }, new [] { typeof(double) }),
+                if (allowsFloatingPoint)
+                {
+                    transitions =
+                        new[]
+                        {
+                            new StackTransition(new [] { typeof(int), typeof(int) }, new [] { typeof(int) }),
+                            new StackTransition(new [] { typeof(int), typeof(NativeIntType) }, new [] { typeof(NativeIntType) }),
+                            new StackTransition(new [] { typeof(long), typeof(long) }, new [] { typeof(long) }),
+                            new StackTransition(new [] { typeof(NativeIntType), typeof(int) }, new [] { typeof(NativeIntType) }),
+                            new StackTransition(new [] { typeof(NativeIntType), typeof(NativeIntType) }, new [] { typeof(NativeIntType) }),
+                            new StackTransition(new [] { typeof(float), typeof(float) }, new [] { typeof(float) }),
+                            new StackTransition(new [] { typeof(double), typeof(double) }, new [] { typeof(double) }),
 
-                        new StackTransition(new [] { typeof(AnyPointerType), typeof(int) }, new [] { typeof(SamePointerType) }),
-                        new StackTransition(new [] { typeof(AnyPointerType), typeof(NativeIntType) }, new [] { typeof(SamePointerType) }),
-                        new StackTransition(new [] { typeof(AnyByRefType), typeof(int) }, new [] { typeof(SameByRefType) }),
-                        new StackTransition(new [] { typeof(AnyByRefType), typeof(NativeIntType) }, new [] { typeof(SameByRefType) })
-                    };
+                            new StackTransition(new [] { typeof(AnyPointerType), typeof(int) }, new [] { typeof(SamePointerType) }),
+                            new StackTransition(new [] { typeof(AnyPointerType), typeof(NativeIntType) }, new [] { typeof(SamePointerType) }),
+                            new StackTransition(new [] { typeof(AnyByRefType), typeof(int) }, new [] { typeof(SameByRefType) }),
+                            new StackTransition(new [] { typeof(AnyByRefType), typeof(NativeIntType) }, new [] { typeof(SameByRefType) })
+                        };
+                }
+                else
+                {
+                    transitions =
+                        new[]
+                        {
+                            new StackTransition(new [] { typeof(int), typeof(int) }, new [] { typeof(int) }),
+                            new StackTransition(new [] { typeof(int), typeof(NativeIntType) }, new [] { typeof(NativeIntType) }),
+                            new StackTransition(new [] { typeof(long), typeof(long) }, new [] { typeof(long) }),
+                            new StackTransition(new [] { typeof(NativeIntType), typeof(int) }, new [] { typeof(NativeIntType) }),
+                            new StackTransition(new [] { typeof(NativeIntType), typeof(NativeIntType) }, new [] { typeof(NativeIntType) }),
+                            
+                            new StackTransition(new [] { typeof(AnyPointerType), typeof(int) }, new [] { typeof(SamePointerType) }),
+                            new StackTransition(new [] { typeof(AnyPointerType), typeof(NativeIntType) }, new [] { typeof(SamePointerType) }),
+                            new StackTransition(new [] { typeof(AnyByRefType), typeof(int) }, new [] { typeof(SameByRefType) }),
+                            new StackTransition(new [] { typeof(AnyByRefType), typeof(NativeIntType) }, new [] { typeof(SameByRefType) })
+                        };
+                }
             }
             else
             {
-                transitions =
-                    new[] 
-                    {
-                        new StackTransition(new [] { typeof(int), typeof(int) }, new [] { typeof(int) }),
-                        new StackTransition(new [] { typeof(int), typeof(NativeIntType) }, new [] { typeof(NativeIntType) }),
-                        new StackTransition(new [] { typeof(long), typeof(long) }, new [] { typeof(long) }),
-                        new StackTransition(new [] { typeof(NativeIntType), typeof(int) }, new [] { typeof(NativeIntType) }),
-                        new StackTransition(new [] { typeof(NativeIntType), typeof(NativeIntType) }, new [] { typeof(NativeIntType) }),
-                        new StackTransition(new [] { typeof(float), typeof(float) }, new [] { typeof(float) }),
-                        new StackTransition(new [] { typeof(double), typeof(double) }, new [] { typeof(double) })
-                    };
+                if (allowsFloatingPoint)
+                {
+                    transitions =
+                        new[]
+                        {
+                            new StackTransition(new [] { typeof(int), typeof(int) }, new [] { typeof(int) }),
+                            new StackTransition(new [] { typeof(int), typeof(NativeIntType) }, new [] { typeof(NativeIntType) }),
+                            new StackTransition(new [] { typeof(long), typeof(long) }, new [] { typeof(long) }),
+                            new StackTransition(new [] { typeof(NativeIntType), typeof(int) }, new [] { typeof(NativeIntType) }),
+                            new StackTransition(new [] { typeof(NativeIntType), typeof(NativeIntType) }, new [] { typeof(NativeIntType) }),
+                            new StackTransition(new [] { typeof(float), typeof(float) }, new [] { typeof(float) }),
+                            new StackTransition(new [] { typeof(double), typeof(double) }, new [] { typeof(double) })
+                        };
+                }
+                else
+                {
+                    transitions =
+                        new[]
+                        {
+                            new StackTransition(new [] { typeof(int), typeof(int) }, new [] { typeof(int) }),
+                            new StackTransition(new [] { typeof(int), typeof(NativeIntType) }, new [] { typeof(NativeIntType) }),
+                            new StackTransition(new [] { typeof(long), typeof(long) }, new [] { typeof(long) }),
+                            new StackTransition(new [] { typeof(NativeIntType), typeof(int) }, new [] { typeof(NativeIntType) }),
+                            new StackTransition(new [] { typeof(NativeIntType), typeof(NativeIntType) }, new [] { typeof(NativeIntType) }),
+                        };
+                }
             }
 
             UpdateState(addOp, Wrap(transitions, name));
@@ -65,7 +100,7 @@ namespace Sigil
         /// </summary>
         public Emit<DelegateType> AddOverflow()
         {
-            VerifyAndDoArithmetic("AddOverflow", OpCodes.Add_Ovf, allowReference: true);
+            VerifyAndDoArithmetic("AddOverflow", OpCodes.Add_Ovf, allowsFloatingPoint: false);
 
             return this;
         }
@@ -76,7 +111,7 @@ namespace Sigil
         /// </summary>
         public Emit<DelegateType> UnsignedAddOverflow()
         {
-            VerifyAndDoArithmetic("UnsignedAddOverflow", OpCodes.Add_Ovf_Un, allowReference: true);
+            VerifyAndDoArithmetic("UnsignedAddOverflow", OpCodes.Add_Ovf_Un, allowsFloatingPoint: false);
 
             return this;
         }
@@ -117,7 +152,7 @@ namespace Sigil
         /// </summary>
         public Emit<DelegateType> MultiplyOverflow()
         {
-            VerifyAndDoArithmetic("MultiplyOverflow", OpCodes.Mul_Ovf);
+            VerifyAndDoArithmetic("MultiplyOverflow", OpCodes.Mul_Ovf, allowsFloatingPoint: false);
 
             return this;
         }
@@ -128,7 +163,7 @@ namespace Sigil
         /// </summary>
         public Emit<DelegateType> UnsignedMultiplyOverflow()
         {
-            VerifyAndDoArithmetic("UnsignedMultiplyOverflow", OpCodes.Mul_Ovf_Un);
+            VerifyAndDoArithmetic("UnsignedMultiplyOverflow", OpCodes.Mul_Ovf_Un, allowsFloatingPoint: false);
 
             return this;
         }
@@ -169,7 +204,7 @@ namespace Sigil
         /// </summary>
         public Emit<DelegateType> SubtractOverflow()
         {
-            VerifyAndDoArithmetic("SubtractOverflow", OpCodes.Sub_Ovf);
+            VerifyAndDoArithmetic("SubtractOverflow", OpCodes.Sub_Ovf, allowsFloatingPoint: false);
 
             return this;
         }
@@ -180,7 +215,7 @@ namespace Sigil
         /// </summary>
         public Emit<DelegateType> UnsignedSubtractOverflow()
         {
-            VerifyAndDoArithmetic("UnsignedSubtractOverflow", OpCodes.Sub_Ovf_Un);
+            VerifyAndDoArithmetic("UnsignedSubtractOverflow", OpCodes.Sub_Ovf_Un, allowsFloatingPoint: false);
 
             return this;
         }
