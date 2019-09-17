@@ -23,7 +23,7 @@ namespace SigilTests
         [Fact]
         public void Overflow()
         {
-            var e1 = Emit<Func<double, double, double>>.NewDynamicMethod("E1");
+            var e1 = Emit<Func<int, int, int>>.NewDynamicMethod("E1");
             e1.LoadArgument(0);
             e1.LoadArgument(1);
             e1.SubtractOverflow();
@@ -31,13 +31,13 @@ namespace SigilTests
 
             var d1 = e1.CreateDelegate();
 
-            Assert.Equal(3.14 - 1.59, d1(3.14, 1.59));
+            Assert.Equal(4 - 5, d1(4, 5));
         }
 
         [Fact]
         public void UnsignedOverflow()
         {
-            var e1 = Emit<Func<double, double, double>>.NewDynamicMethod("E1");
+            var e1 = Emit<Func<int, int, int>>.NewDynamicMethod("E1");
             e1.LoadArgument(0);
             e1.LoadArgument(1);
             e1.UnsignedSubtractOverflow();
@@ -45,7 +45,7 @@ namespace SigilTests
 
             var d1 = e1.CreateDelegate();
 
-            Assert.Equal(3.14 - 1.59, d1(3.14, 1.59));
+            Assert.Equal(1234 - 5, d1(1234, 5));
         }
     }
 }

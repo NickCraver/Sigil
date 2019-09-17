@@ -251,29 +251,29 @@ namespace SigilTests
         [Fact]
         public void OverflowNonGeneric()
         {
-            var e1 = Emit.NewDynamicMethod(typeof(double), new [] { typeof(double), typeof(double) }, "E1");
+            var e1 = Emit.NewDynamicMethod(typeof(int), new [] { typeof(int), typeof(int) }, "E1");
             e1.LoadArgument(0);
             e1.LoadArgument(1);
             e1.AddOverflow();
             e1.Return();
 
-            var d1 = (Func<double, double, double>)e1.CreateDelegate(typeof(Func<double, double, double>));
+            var d1 = (Func<int, int, int>)e1.CreateDelegate(typeof(Func<int, int, int>));
 
-            Assert.Equal(3.14 + 1.59, d1(3.14, 1.59));
+            Assert.Equal(4 + 5, d1(4, 5));
         }
 
         [Fact]
         public void UnsignedOverflowNonGeneric()
         {
-            var e1 = Emit.NewDynamicMethod(typeof(double), new [] { typeof(double), typeof(double) }, "E1");
+            var e1 = Emit.NewDynamicMethod(typeof(int), new [] { typeof(int), typeof(int) }, "E1");
             e1.LoadArgument(0);
             e1.LoadArgument(1);
             e1.UnsignedAddOverflow();
             e1.Return();
 
-            var d1 = (Func<double, double, double>)e1.CreateDelegate(typeof(Func<double, double, double>));
+            var d1 = (Func<int, int, int>)e1.CreateDelegate(typeof(Func<int, int, int>));
 
-            Assert.Equal(3.14 + 1.59, d1(3.14, 1.59));
+            Assert.Equal(4 + 5, d1(4, 5));
         }
     }
 }
