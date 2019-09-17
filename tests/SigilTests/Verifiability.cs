@@ -131,20 +131,6 @@ namespace SigilTests
         public void Ldelema()
         {
             {
-                var dyn = new DynamicMethod("E1", typeof(void), new[] { typeof(int[]) });
-                var il = dyn.GetILGenerator();
-                il.Emit(OpCodes.Ldarg_0);
-                il.Emit(OpCodes.Ldc_I4_0);
-                il.Emit(OpCodes.Ldelema, typeof(int));
-                il.Emit(OpCodes.Ldind_I4);
-                il.Emit(OpCodes.Ret);
-
-                var d1 = (Action<int[]>)dyn.CreateDelegate(typeof(Action<int[]>));
-
-                Assert.Throws<VerificationException>(() => d1(new int[] { 123 }));
-            }
-
-            {
                 var asm = AssemblyBuilder.DefineDynamicAssembly(new AssemblyName("Foo"), AssemblyBuilderAccess.Run);
                 var mod = asm.DefineDynamicModule("Bar");
                 var t = mod.DefineType("T");
